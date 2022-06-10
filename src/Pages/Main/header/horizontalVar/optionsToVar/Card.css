@@ -1,0 +1,9 @@
+.list-var-element{
+  display: inline-block;
+  padding-left:14px;
+  color:red;
+  margin:2px;
+}
+.list-var-element:first-child{
+  padding-left: 0px;
+}
