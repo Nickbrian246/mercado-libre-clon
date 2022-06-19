@@ -14,7 +14,7 @@ const PromotionsStreaming = () => {
         width:'340px',
         height:'39px',
         }}
-        src="https://http2.mlstatic.com/D_NQ_836635-MLA50056872549_052022-OO.webp"
+        src="https://http2.mlstatic.com/D_NQ_867551-MLA50329422854_062022-OO.webp"
         alt="promocion del mes ">
       </img>
     </Link>

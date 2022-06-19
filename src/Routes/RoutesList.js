@@ -1,4 +1,5 @@
 import { Header } from "../Pages/Main/header";
+import { MainPage } from "../Pages/Main";
 
 
 const routeList = [
@@ -6,7 +7,7 @@ const routeList = [
   path:'/',
   title:'menu',
   description: 'menu inicial',
-  element: <Header path= '/'/>
+  element: <MainPage path= '/'/>
 },
 ];
 

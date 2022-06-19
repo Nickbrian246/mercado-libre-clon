@@ -12,13 +12,14 @@ import { MyShopping } from "./MyShopping";
 import { Favorites } from "./favorites/index";
 import { Bell } from "./bellNotifications";
 import { ShoppingCar } from "./ShoppingCar";
+import { CarouselSlider } from "../Corousel";
 
 const Header = () => {
 
 
   return (
   <>
-    <Row style={{height:'100px',background:'#fff159' }}>
+    <Row >
 
     <Row align="middle">
       <Col span={15} >
@@ -61,6 +62,15 @@ const Header = () => {
     </Row>
 
     </Row>
+
+    {/* <Row  >
+      
+        <Col style={{marginLeft:'3.5%'}}>
+        <CarouselSlider/>
+        </Col>
+
+  
+    </Row> */}
   </>
   )
 }
