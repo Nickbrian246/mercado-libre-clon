@@ -12,7 +12,7 @@ const MainPage = () => {
 
   return (
     <>
-    <Row style={{height:'100px',background:'#fff159' }} justify='center'>
+    <Row style={{height:'100px',background:'#fff159', }} justify='center'>
     <Col>
       <Header/>
     </Col>
@@ -25,7 +25,8 @@ const MainPage = () => {
     </Col>
 
     </Row>
-    <Row  justify="center">
+
+    <Row style={{marginTop:'30px'}}  justify="center">
     <Col >
       <BanckAndPayment/>
     </Col>
