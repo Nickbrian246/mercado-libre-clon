@@ -12,7 +12,7 @@ import mainInformationReducer from '../src/Store/mainReducer'
 
 const store = configureStore({
   reducer:{
-    mainInformation: mainInformationReducer,
+    fakeDataInformation: mainInformationReducer,
 
   },
 })

@@ -5,7 +5,7 @@ import './Card.css'
 
 
 const CardOption = ( props) => {
-  console.log(props.value.nombre,'soy props')
+  
 
   return (
 

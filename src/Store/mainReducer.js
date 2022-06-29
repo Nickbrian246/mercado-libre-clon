@@ -2,15 +2,19 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = {
-  firstInformation: [],
+  fakeInformation: [],
+  fakeInformation2: [],
 }
 
 export const mainSlice = createSlice ({
   name:"mainSliceState",
   initialState,
   reducers:{
-    SetInformation:(state, action ) => {
-      state.firstInformation= action.payload;
+    setFakeDataInformation:(state, action ) => {
+      state.fakeInformation= action.payload;
+    },
+    setFakeDataInformation2:(state, action ) => {
+      state.fakeInformation2= action.payload;
     },
   }
 });
@@ -18,4 +22,4 @@ export const mainSlice = createSlice ({
 export default mainSlice.reducer;
 
 
-export const {SetInformation} = mainSlice.actions;
+export const {setFakeDataInformation, setFakeDataInformation2} = mainSlice.actions;
