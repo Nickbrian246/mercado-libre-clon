@@ -33,7 +33,7 @@ useEffect(()=> {
 },[])
 
   
-console.log(dataForCard,'from second dslicder');
+
 const slides2 = dataForCard.map((slide2) => (
   <Card2 slide= {slide2} key = {slide2._id}/>
 )

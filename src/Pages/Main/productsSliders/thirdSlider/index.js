@@ -1,4 +1,4 @@
-// Reat// ***************************************************************
+// React// ***************************************************************
 import React, { useEffect,useState} from "react";
 // **********************************************************************
 
@@ -32,8 +32,7 @@ useEffect(()=> {
   dispatch(setFakeDataInformation2(card))
 },[])
 
-  
-console.log(dataForCard,'from second dslicder');
+
 const slides2 = dataForCard.map((slide2) => (
   <Card3 slide= {slide2} key = {slide2._id}/>
 )

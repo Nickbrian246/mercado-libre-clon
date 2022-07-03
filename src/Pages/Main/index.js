@@ -11,6 +11,7 @@ import { BanckAndPayment } from "./BankAndPayment";
 import { CarouselComponent } from "./productsSliders/firtsSlider";
 import { CarouselComponent2 } from "./productsSliders/secondSlider";
 import { CarouselComponent3 } from "./productsSliders/thirdSlider";
+import { PromotionCard } from "./promotionCard";
 // ****************************************************************
 
 
@@ -60,11 +61,17 @@ const MainPage = () => {
     </Col>
 
     </Row>
+
     <Row style={{marginTop:'30px', }}  justify="center">
     <Col style={{width:'1340px',height:'400px'}} >
       <CarouselComponent3/>
     </Col>
+    </Row>
 
+    <Row style={{marginTop:'30px', }}  justify="center">
+    <Col style={{width:'1340px',height:'400px'}} >
+      <PromotionCard/>
+    </Col>
     </Row>
     
     </>
