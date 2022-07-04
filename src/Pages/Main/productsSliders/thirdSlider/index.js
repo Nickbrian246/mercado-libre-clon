@@ -35,8 +35,7 @@ useEffect(()=> {
 
 const slides2 = dataForCard.map((slide2) => (
   <Card3 slide= {slide2} key = {slide2._id}/>
-)
-)
+))
   return (
     <> 
     <div className="carousel-container">
@@ -47,15 +46,16 @@ const slides2 = dataForCard.map((slide2) => (
       <Carousel
       
       plugins={[
-      {
-        resolve: slidesToShowPlugin,
-        options: {
-        numberOfSlides: 1
-        }
-      },
+      // {
+      //   // resolve: slidesToShowPlugin,
+      //   // options: {
+      //   // numberOfSlides: 1
+      //   // }
+      // },
+      
       'clickToChange',
       'arrows',
-      'centered',
+      
     ]}
     animationSpeed={500}
         offset={0}
