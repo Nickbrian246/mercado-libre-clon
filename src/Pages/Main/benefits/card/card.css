@@ -1,0 +1,18 @@
+.card-text-container{
+  margin-left: 16px;
+}
+.card-text-container p{
+  color: white;
+  margin-bottom: 0px;
+}
+.card-text-container :nth-child(2){
+  font-size: 22px;
+    font-weight: 600;
+    line-height: 1.09;
+}
+.card-text-container :nth-child(3){
+  font-size: 18px;
+    letter-spacing: .4px;
+    line-height: 1.11;
+    margin-top: 4px;
+}
