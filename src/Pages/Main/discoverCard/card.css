@@ -1,0 +1,40 @@
+
+.card-discover-container{
+  width: 584px;
+  height: 250px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  }
+  
+  .info-cardDiscover-container{
+  display: flex;
+  flex-direction: column;
+  width: 265px;
+  justify-content: center;
+  margin-left: 20px;
+  }
+  .info-cardDiscover-container :nth-child(1) {
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+  }
+  .info-cardDiscover-container :nth-child(2) {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 0px;
+    line-height: 1.2;
+  }
+  
+  
+  .image-cardDiscover-container{
+  width: 290px;
+  height: 250px;
+  }
+  .right-image{
+    width: 290px;
+    height: 250px;
+  }
+
+

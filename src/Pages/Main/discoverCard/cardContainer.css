@@ -1,0 +1,11 @@
+.container{
+  display: flex;
+  justify-content: space-around;
+}
+.title-discover-outsideContainer{
+  font-size: 26px;
+  font-weight: 300;
+  margin: 0 0 0 40px;
+  color: #666;
+
+}

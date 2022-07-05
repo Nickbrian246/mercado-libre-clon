@@ -13,6 +13,7 @@ import { CarouselComponent2 } from "./productsSliders/secondSlider";
 import { CarouselComponent3 } from "./productsSliders/thirdSlider";
 import { PromotionCard } from "./promotionCard";
 import { BenefitsSlider } from "./benefits";
+import { DiscoverCards } from "./discoverCard";
 // ****************************************************************
 
 
@@ -78,6 +79,12 @@ const MainPage = () => {
     <Row style={{marginTop:'30px', }}  justify="center">
     <Col style={{width:'1340px',height:'400px'}} >
       <BenefitsSlider/>
+    </Col>
+    </Row>
+
+    <Row style={{marginTop:'30px', }}  justify="center">
+    <Col style={{width:'1340px',height:'400px'}} >
+      <DiscoverCards/>
     </Col>
     </Row>
     
