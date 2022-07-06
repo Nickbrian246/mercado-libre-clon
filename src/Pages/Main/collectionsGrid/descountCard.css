@@ -1,0 +1,26 @@
+.discount-card{
+width: 383px;
+height:384px ;
+background: #ffff;
+}
+.discount-img-container{
+width: 383px;
+height: 281px;
+}
+.discount-text-container{
+  width: 383px;
+  height: 99px;
+}
+.discount-text-container :nth-child(1) {
+  color: #4b4b4b;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 4px
+
+}
+.discount-text-container :nth-child(2){
+  color: #4b4b4b;
+  font-size: 28px;
+  font-weight: 700;
+  overflow: hidden;
+}
