@@ -30,12 +30,12 @@ const MainPage = () => {
 
   return (
     <>
-    <Row style={{height:'100px',background:'#fff159', }} justify='center'>
+    {/* <Row style={{height:'100px',background:'#fff159', }} justify='center'>
     <Col>
       <Header/>
     </Col>
 
-    </Row>
+    </Row> */}
 
     <Row  justify="center">
     <Col  style={{width:'1600px'}}>
