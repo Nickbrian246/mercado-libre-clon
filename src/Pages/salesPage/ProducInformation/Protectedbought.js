@@ -6,7 +6,7 @@ import{ BiCheckShield} from 'react-icons/bi';
 import {IoIosTrophy} from 'react-icons/io';
 
 const ProtectedBought = () => {
-
+const randomPoints = Math.floor(Math.random()* 100);
 
   return (
     <>
@@ -22,7 +22,7 @@ const ProtectedBought = () => {
         <div>
           <IoIosTrophy className="icon-trophy-container"/>
         </div>
-        <p> <span  className="blue">Mercado Puntos </span>.Sumas 29 puntos.</p>
+        <p> <span  className="blue">Mercado Puntos </span>.Sumas {`${randomPoints} `}puntos.</p>
       </div>
 
 

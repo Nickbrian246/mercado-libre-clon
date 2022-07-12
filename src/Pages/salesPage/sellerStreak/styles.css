@@ -1,0 +1,208 @@
+.sellerInformation-container{
+  width: 350px;
+  height: 318;
+  background: #ffff;
+  display: flex;
+  flex-direction: column;
+  border: solid 1px  #e5e5e5;
+  padding: 32px 16px;
+  border-radius: 10px;
+}
+.icon-leadermarket-container{
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+/* ranked container */
+.ranked-container{
+  display: flex;
+  width:318px;
+  height: 41px;
+  gap: 8px;
+}
+.ranked-size {
+  width: 58px;
+  height: 8px;
+}
+.color-1{
+  background: #d3c9c9;
+}
+.color-2{
+  background:#fff5e8;
+}
+.color-3{
+  background:#fffcda;
+}
+.color-4{
+  background:#f1fdd7;
+}
+.color-5{
+  background:#a5f5b1;
+}
+/* clases activas */
+.active-1{
+  background:#f1baba ;
+  transform: scale(1.1);
+}
+.active-2{
+  background:#ffd092 ;
+  transform: scale(1.1);
+}
+.active-3{
+  background:#e4d425 ;
+  transform: scale(1.1);
+}
+.active-4{
+  background: #f1fdd7;
+  transform: scale(1.1);
+}
+.active-5{
+  background:#39b54a;
+  transform: scale(1.1);
+}
+
+/* END*/
+
+/*here begins the information container styles*/
+  .information-container{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .information-container div {
+    width: 106px;
+    height: 72px;
+    padding: 5px 0;
+  }
+.icon-informationSection-container{
+  border-right: 1px solid #dddddd;
+}
+  .icon-informationSection-container :nth-child(1){
+    color: #000;
+    display: block;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+  .icon-informationSection-container :nth-child(2){
+    line-height: 1;
+    margin-top: 8px;
+    text-align: center;
+    color: #8e8e8e;
+    font-size: 12px;
+  }
+  .attention-container{
+    border-right: 1px solid #dddddd;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+
+  .attention-container :nth-child(1){
+    text-align: center;
+    height: 46px;
+    
+  }
+
+  .icon-message-container{
+    font-size: 28px;
+    position: absolute;
+    margin-left: -5px;
+    
+  }
+  .icon-check-container{
+    color: #39b54a;
+    position: relative;
+    top: 9px;
+    left: 9px;
+  }
+
+  .attention-text-color{
+    line-height: 1;
+    margin-top: 8px;
+    text-align: center;
+    color: #8e8e8e;
+    font-size: 12px;
+  }
+.deliverTime-container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.icon-check-container2 {
+  color: #39b54a;
+  position: relative;
+  top: 6px;
+  left: 9px;
+}
+/*active*/
+.icon-check-container-active1{
+  color: #f1baba;
+  position: relative;
+  top: 9px;
+  left: 9px;
+}
+.icon-check-container-active2{
+  color: #ffd092;
+  position: relative;
+  top: 6px;
+  left: 9px;
+}
+.icon-check-container-active3{
+  color: #e4d425 ;
+  position: relative;
+  top: 6px;
+  left: 9px;
+}
+.icon-check-container-active4{
+  color: #b8d47b;
+  position: relative;
+  top: 6px;
+  left: 9px;
+}
+.icon-check-container-active5{
+  color: #39b54a;
+  position: relative;
+  top: 6px;
+  left: 9px;
+}
+
+.icon-check-container-active1a{
+  color: #f1baba;
+  position: relative;
+  top: 9px;
+  left: 9px;
+}
+.icon-check-container-active2a{
+  color: #ffd092;
+  position: relative;
+  top: 9px;
+  left: 9px;
+}
+.icon-check-container-active3a{
+  color: #e4d425 ;
+  position: relative;
+  top: 9px;
+  left: 9px;
+}
+.icon-check-container-active4a{
+  color: #b8d47b;
+  position: relative;
+  top: 9px;
+  left: 9px;
+}
+.icon-check-container-active5a{
+  color: #39b54a;
+  position: relative;
+  top: 9px;
+  left: 9px;
+}
+/*END*/
