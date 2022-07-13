@@ -1,0 +1,46 @@
+.warranty-container{
+  width: 350px;
+  height: 306px;
+  padding: 32px 16px ;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #e5e5e5 ;
+}
+.warranty-text-container :nth-child(1){
+  color: rgba(0,0,0,.9);
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 28px;
+    width: 100%;
+}
+.protected-buy-container{
+  height: 71px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+.protected-buy-container :nth-child(1){
+  margin-bottom: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(0,0,0,.9);
+  margin: 0;
+}
+.protected-buy-container :nth-child(2){
+  font-weight: 400;
+  color: rgba(0,0,0,.55);
+  margin: 0;
+  margin-top: 12px;
+}
+
+.seller-warranty-container  :nth-child(1){
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(0,0,0,.9);
+  margin: 0;
+}
+.seller-warranty-container  :nth-child(2){
+  font-weight: 400;
+  color: rgba(0,0,0,.55);
+  margin-top: 12px;
+  margin-bottom: 24px;
+}

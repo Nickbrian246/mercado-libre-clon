@@ -1,0 +1,47 @@
+.paymentMethods-container{
+  width: 350px;
+  height: 588px;
+  padding: 32px 16px;
+}
+.title{
+  color: rgba(0,0,0,.9);
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 28px;
+  width: 100%;
+}
+.payment-card-green{
+  display: flex;
+  justify-content: start;
+  width: 287px;
+  height: 46px;
+  background:#00a650;
+  border-radius: 5px;
+  align-items: center;
+  
+}
+
+.payment-card-green .text{
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 0;
+  color: white;
+  margin-left: 10px;
+  margin-bottom: 6px ;
+}
+.payment-card-green .icon-container{
+  margin-bottom: 0;
+  color: white;
+  margin-left: 10px;
+}
+.icon-container  .icon {
+  font-size: 20px;
+  
+}
+.title-bank-information{
+  color: rgba(0,0,0,.9);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 12px;
+  margin-top: 24px;
+}
