@@ -1,0 +1,36 @@
+.characteristic-container{
+  width: 718px;
+  height: 383px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-top: 1px solid #e5e5e5;
+}
+.characteristic-container .title{
+  font-size: 24px;
+  padding-bottom: 32px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0;
+}
+.title-Characteristics{
+  font-size: 20px;
+    margin-top: 32px;
+    padding-bottom: 24px;
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 0;
+    margin-top: 32px;
+}
+.kit-Container{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.bold{
+  font-weight:700;
+}
+
+.letter-syntax{
+  font-size: 14px;
+
+}

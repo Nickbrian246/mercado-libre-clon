@@ -6,6 +6,8 @@ import { SellerRankNInformation } from "./sellerStreak/SellerRankeNinformation";
 import { WarrantyBack } from "./warranty/warrantyBack";
 import { Warranty } from "./warranty/warranty";
 import { PaymentMethods } from "./warranty/paymentMethods";
+import { HorizontalSlider } from "./HorizontalSlider";
+import { MainCharacteristics } from "./Maincharacteristics";
 
 
 // ****************************************************
@@ -22,6 +24,16 @@ const SalesPage = () => {
     <Row gutter={[10,10]} style={{width:'1118px', background:'white', height:'2400px'}}>
 
         <Col  span={16} >
+        <Row style={{marginTop:'30px', }}  justify="center">
+          <Col  >
+          <HorizontalSlider/>
+          </Col>
+        </Row>
+        <Row style={{marginTop:'30px', }}  justify="center">
+          <Col  >
+          <MainCharacteristics/>
+          </Col>
+        </Row>
         </Col>
 
 
