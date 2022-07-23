@@ -1,0 +1,19 @@
+.description-container{
+  width: 718px;
+  height: 729px;
+  padding: 40px 0;
+  border-top: 1px solid #e5e5e5 ;
+}
+.title-description{
+  font-size: 24px;
+    font-weight: 400;
+    padding-bottom: 24px;
+    line-height: 1.25;
+    margin: 0;
+}
+.text{
+  color: #666;
+  font-size: 20px;
+  font-weight: 400;
+  word-break: break-word;
+}

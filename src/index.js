@@ -7,12 +7,14 @@ import reportWebVitals from './reportWebVitals';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
-import mainInformationReducer from '../src/Store/mainReducer'
+import mainInformationReducer from '../src/Store/mainReducer';
+import salesInformationReducer from '../src/Store/salesPage'
 
 
 const store = configureStore({
   reducer:{
     fakeDataInformation: mainInformationReducer,
+    salesCommentsInformation: salesInformationReducer,
 
   },
 })
