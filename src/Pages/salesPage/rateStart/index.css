@@ -1,0 +1,47 @@
+.item-flex{
+  margin-right: 10px;
+  color: rgba(0,0,0,.55);
+  font-size: 13px;
+}
+.progress-item-space{
+  margin-bottom: 12.5px;
+}
+.start-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+}
+.progress-container{ 
+  margin-left:56px;
+}
+
+.start-container .ratio-number{
+  color: rgba(0,0,0,.9);
+    font-size: 64px;
+    font-weight: 300;
+    line-height: 1.03;
+    text-align: end;
+    margin-bottom: 10px;
+}
+.start-container .text-start-container{
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.14;
+  margin-top: 8px;
+  color: rgba(0,0,0,.55);
+
+}
+.title-text-rate{
+  color: #333;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+  padding: 30px 2px 0px 2px;
+  text-align: left;
+  text-overflow: inherit;
+  padding-top: 14px;
+  word-wrap: break-word;
+  margin: 10px 40px 0px 40px;
+}

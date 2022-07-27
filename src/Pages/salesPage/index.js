@@ -10,6 +10,7 @@ import { HorizontalSlider } from "./HorizontalSlider";
 import { MainCharacteristics } from "./Maincharacteristics";
 import { Description } from "./description";
 import { Questions } from "./questions";
+import { RateStart } from "./rateStart";
 
 
 
@@ -48,6 +49,12 @@ const SalesPage = () => {
           <Questions/>
           </Col>
         </Row>
+        <Row style={{marginTop:'30px', }}  justify="center">
+          <Col  >
+          <RateStart/>
+          </Col>
+        </Row>
+
 
 
 

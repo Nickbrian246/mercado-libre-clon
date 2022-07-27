@@ -8,6 +8,10 @@ import { Stock } from "./Stock";
 import { ProtectedBought } from "./Protectedbought";
 //****************************************************** */
 
+//Ant Components *****************************************//
+
+//Ant Components *****************************************//
+
 
 
 const ProductInformationCard = ()=> {
