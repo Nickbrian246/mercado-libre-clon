@@ -11,6 +11,7 @@ import { MainCharacteristics } from "./Maincharacteristics";
 import { Description } from "./description";
 import { Questions } from "./questions";
 import { RateStart } from "./rateStart";
+import { QuestionsRate } from "./questionsRate";
 
 
 
@@ -52,6 +53,11 @@ const SalesPage = () => {
         <Row style={{marginTop:'30px', }}  justify="center">
           <Col  >
           <RateStart/>
+          </Col>
+        </Row>
+        <Row style={{marginTop:'30px', }}  justify="center">
+          <Col  >
+          <QuestionsRate/>
           </Col>
         </Row>
 
