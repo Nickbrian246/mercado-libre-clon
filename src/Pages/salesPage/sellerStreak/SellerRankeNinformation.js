@@ -20,28 +20,27 @@ const salesInThe60DaysPast =Math.floor(Math.random() * 500);
 useEffect(()=>{
   if ((salesInThe60DaysPast<=500) && (salesInThe60DaysPast>=400)) {
     setIsActive5(true);
-    console.log('5',salesInThe60DaysPast);
+    
   }
   if ((salesInThe60DaysPast<=399) && (salesInThe60DaysPast>=300)) {
     setIsActive4(true);
-    console.log('4',salesInThe60DaysPast);
+    
   }
   if ((salesInThe60DaysPast<=299) && (salesInThe60DaysPast>=200)) {
     setIsActive3(true);
-    console.log('3',salesInThe60DaysPast);
+
   }
   if ((salesInThe60DaysPast<=199) && (salesInThe60DaysPast>=100)) {
     setIsActive2(true);
-    console.log('2',salesInThe60DaysPast);
+    
   }
   if ((salesInThe60DaysPast<=99 && (salesInThe60DaysPast>=1) )) {
     setIsActive1(true);
-    console.log('1',salesInThe60DaysPast);
+    
   }
 
 },[]);
 
-console.log(salesInThe60DaysPast,'soy sales fuera del efecto');
 
   return (
     <>

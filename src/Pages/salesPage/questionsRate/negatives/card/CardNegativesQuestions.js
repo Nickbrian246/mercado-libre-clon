@@ -4,7 +4,8 @@ import { Rate } from 'antd';
 import {AiOutlineLike,AiOutlineDislike} from 'react-icons/ai';
 
 import './cardNegatives.css';
-const CardNegativesQuestionsRank= () => {
+const CardNegativesQuestionsRank= (props) => {
+  const {Comment,rateStarts,status} = props.data;
   const [likeButton, setLikeButton] = useState(false);
   const [disLikeButton, setDislikeButton] = useState(false);
 
@@ -30,11 +31,11 @@ const CardNegativesQuestionsRank= () => {
     <>
     <div className="cardQuestions-container">
       <div >
-        <Rate defaultValue={3}/>
+        <Rate defaultValue={rateStarts}/>
       </div>
       <div>
         <p className="title"> Regular</p>
-        <p className="text-title">Es funcional, bonito pero plastico de mala calidad. 1. Las cerdas del cepillo no vienen adheridas y se salen. 2. El cilindro donde viene el limpiador es dificil de separ del cepillo, cosa que hizo que el plastico sufriera una cuarteadura. 3. Fuera de detalles es funcional para su uso, limpieza.</p>
+        <p className="text-title">{`${Comment}`}</p>
       </div>
 
       <div className="icon-container">

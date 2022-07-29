@@ -1,7 +1,6 @@
 .buttons-container{
   width: 718px;
   height: 50px ;
-  display: flex;
   border-bottom: 1px solid #e5e5e5;
 }
 .btn-style{
@@ -31,6 +30,6 @@
   margin-top: 20px;
   width: 718px;
   max-height: 555px;
-  display: flex;
-  justify-content: center;
+  overflow: auto; 
+  overflow-x: hidden;
 }

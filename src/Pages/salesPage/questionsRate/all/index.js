@@ -2,11 +2,20 @@ import React from "react";
 
 import { CardAllQuestionsRank } from "./card/CardAllQuestionsRank";
 
+import { useSelector } from "react-redux";
+
 const AllQuestions = () => {
+  const data = useSelector((state)=>  state.salesCommentsInformation.AllComments);
+  
 
   return(
     <>
-    <CardAllQuestionsRank/>
+    
+    {data.map((data) => (
+      <CardAllQuestionsRank data={data} key ={data.id}/>
+    ))}
+    
+    
     </>
   )
 };

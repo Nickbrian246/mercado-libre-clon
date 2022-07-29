@@ -12,6 +12,7 @@ faker.finance.amount(5, 10, 0) // '8'
 faker.finance.amount(5, 10, 2, '$') // '$5.85'
 faker.finance.amount(5, 10, 5, '', true) // '9,75067'
 
+/**Generador de tajetass ********************************************** */
 const generateCard = () => {
 
   return {
@@ -38,3 +39,31 @@ const generateManyBooks = (size) =>  {
 
 export {generateManyBooks  };
 
+/*********************************************************************************************** */
+
+/*Generador de comentarios para comentarios con ratio de estrellas* *************************************************************************/
+
+const generateComments = () => {
+
+  return {
+    Comment:faker.commerce.productDescription(),
+    _id: faker.datatype.uuid(),
+    rateStarts: faker.commerce.price(1,5), 
+    status:false,
+  
+  }
+    
+}
+
+const generateManyComments = (size) => {
+  const limit = size ?? 15;
+  const fakeComments = [];
+  for (let index = 0; index < limit; index += 1 ) {
+    fakeComments.push(generateComments());
+    
+  }
+
+  return [...fakeComments]
+}
+export {generateManyComments}
+/************************************************************************************************ */
