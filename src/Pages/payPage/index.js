@@ -8,6 +8,7 @@ import { Row,Col } from "antd";
 //Components ******************************************************
 import { HeaderPayPage } from "./HeaderPayPage";
 import { BankCards } from "./backCards";
+import { ProductInformation } from "./productInformation";
 
 
 //******************************************************************** */
@@ -73,11 +74,13 @@ const PayPage = () => {
 
       </Row>
 
-      <Row style={{background:'green', width:'300px'}}>
+      <Row style={{
+        background:'#f5f5f5',
+        width:'400px',
+        height:'800px'
+        }}>
       <Col>
-      <p>
-        hollo there
-      </p>
+      <ProductInformation/>
       </Col>
 
       </Row>

@@ -21,6 +21,7 @@ const generateCard = () => {
     price: faker.commerce.price(),
     image: faker.image.food(),
     status:faker.datatype.boolean(),
+    description:faker.commerce.productDescription(),
   }
 }
 
