@@ -19,9 +19,8 @@ const generateCard = () => {
     _id: faker.datatype.uuid(),
     name: faker.commerce.productName(),
     price: faker.commerce.price(),
-    image: faker.image.food()
-
-
+    image: faker.image.food(),
+    status:faker.datatype.boolean(),
   }
 }
 
@@ -66,4 +65,29 @@ const generateManyComments = (size) => {
   return [...fakeComments]
 }
 export {generateManyComments}
+/************************************************************************************************ */
+
+/*Generador de tarjetas de credito* *************************************************************************/
+
+const generateCreditCards = () => {
+
+  return {
+    accountNumber:faker.finance.account(4) ,
+    _id: faker.datatype.uuid(),
+    status:faker.datatype.boolean(),
+  }
+    
+}
+
+const generateManyCreditCards = (size) => {
+  const limit = size ?? 5;
+  const fakeComments = [];
+  for (let index = 0; index < limit; index += 1 ) {
+    fakeComments.push(generateCreditCards());
+    
+  }
+
+  return [...fakeComments]
+}
+export {generateManyCreditCards}
 /************************************************************************************************ */

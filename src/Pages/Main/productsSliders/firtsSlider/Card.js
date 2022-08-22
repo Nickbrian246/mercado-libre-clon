@@ -1,17 +1,46 @@
 import React from "react";
 
+/** CSS **************************************************************/
 import './card.css';
+/******************************************************************** */
+
+/* React Redux* *******************************************************/
+import { useDispatch } from "react-redux";
+import { setProductSelected } from "../../../../Store/productSelected";
+/********************************************************************** */
+
+/* React Router********************************************************************* */
+import { useNavigate} from "react-router-dom";
+
+/*********************************************************************************** */
 
 const Card1 = (props) => {
 const {
   image,
   name,
   price,
-  _id} = props.slide;
+  _id,
+  status,
+        } = props.slide;
+
+  const navigate= useNavigate()
+  const dispatch= useDispatch()
+
+  const handleClickContainer = ()=> {
+    dispatch(setProductSelected({
+      price,
+      image,
+      name,
+      _id,
+      status,
+    }))
+      navigate('/producto');
+
+  }
 
   return (
     <>
-    <div className="card-container" >
+    <div className="card-container" onClick={()=> {handleClickContainer()}}>
       <div>
         <img 
         className="card-image" 

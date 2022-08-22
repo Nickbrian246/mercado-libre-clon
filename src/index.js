@@ -8,13 +8,17 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
 import mainInformationReducer from '../src/Store/mainReducer';
-import salesInformationReducer from '../src/Store/salesPage'
+import salesInformationReducer from '../src/Store/salesPage';
+import BankCardsSlice from './Store/bankCards';
+import productSelected from './Store/productSelected';
 
 
 const store = configureStore({
   reducer:{
     fakeDataInformation: mainInformationReducer,
     salesCommentsInformation: salesInformationReducer,
+    BankCardsSlice: BankCardsSlice,
+    productSelected: productSelected,
 
   },
 })

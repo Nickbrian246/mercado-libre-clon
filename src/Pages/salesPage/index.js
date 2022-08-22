@@ -1,6 +1,7 @@
 import React from "react";
 
 //COMPONENTS************************************** */
+import { Header } from "../Main/header";
 import { ProductInformationCard } from "./ProducInformation";
 import { SellerRankNInformation } from "./sellerStreak/SellerRankeNinformation";
 import { WarrantyBack } from "./warranty/warrantyBack";
@@ -25,6 +26,14 @@ const SalesPage = () => {
 
   return (
     <>
+    <Row style={{height:'100px',background:'#fff159', }} justify='center'>
+    <Col>
+      <Header/>
+    </Col>
+
+    </Row>
+
+
     <Row justify="center"> 
     <Row gutter={[10,10]} style={{width:'1218px', background:'white', height:'3400px'}}>
 

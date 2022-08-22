@@ -14,14 +14,14 @@ const RoutesApp = () => {
   return (
 <>
   <BrowserRouter>
-  <Row style={{height:'100px',background:'#fff159', }} justify='center'>
+  {/* <Row style={{height:'100px',background:'#fff159', }} justify='center'>
     <Col>
       <Header/>
     </Col>
 
-    </Row>
+    </Row> */}
     <Routes>
-      {Object.values(routeList).map(({path, element , description}) => (
+      {Object.values(routeList).map(({path, element , description,status}) => (
       <Route element= {element} path= {path} key={description}/>
       ))}
       <Route path='*' element= {<NotFound/>} />

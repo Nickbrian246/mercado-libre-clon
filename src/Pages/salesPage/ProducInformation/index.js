@@ -8,13 +8,8 @@ import { Stock } from "./Stock";
 import { ProtectedBought } from "./Protectedbought";
 //****************************************************** */
 
-//Ant Components *****************************************//
-
-//Ant Components *****************************************//
-
-
-
 const ProductInformationCard = ()=> {
+
 
   return(
     <>
@@ -26,7 +21,7 @@ const ProductInformationCard = ()=> {
       border:'1px solid #e5e5e5 ',
       background:'white'}}>
       <DescriptionNCost/>
-      <DeliverTime/>
+      <DeliverTime />
       <Stock/>
       <BuyNAddButtons/>
       <ProtectedBought/>

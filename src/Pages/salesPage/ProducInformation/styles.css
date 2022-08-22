@@ -33,14 +33,14 @@
 }
 
 .description-text-container 
-:nth-child(2){
+.months-without{
   font-size: 18px;
   font-weight: 400;
   line-height: 1;
   color: #00a650;;
 }
 .description-text-container 
-:nth-child(3){
+.payment-method{
   font-size: 14px;
   font-weight: 400;
   line-height: 1.35;

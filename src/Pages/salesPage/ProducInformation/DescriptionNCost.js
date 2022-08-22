@@ -1,14 +1,33 @@
+/*REACT* *****************************************************/
 import React, { useEffect } from "react";
-import './styles.css';
+/************************************************************* */
 
+/*CSS***************************************************** */
+import './styles.css';
+/************************************************************* */
+
+/*  LIBRERIA ANTD***************************************************** */
 import { Rate } from 'antd'; 
+/************************************************************* */
+
+//React Redux *****************************************//
+import  {useSelector} from 'react-redux'
+//*****************************************************//
+
 
 
 
 const DescriptionNCost = () => {
+  const {
+    name,
+    price,
+    status,
+          } = useSelector((state)=> state.productSelected.productSelected);
+
 const randomSales = Math.floor(Math.random() *1000);
-const price = 231;
-const priceMonthly = (price / 3);
+const priceMonthlyCalculus = (price / 3);
+const priceMonthly= priceMonthlyCalculus.toFixed(2);// trunca a 2 decimales
+
 
 
 const handleRate = (value) => {
@@ -19,13 +38,25 @@ console.log(value, 'soy valor de ratio, en folder de prodcutInformation, descrip
     <>
     <p className="description-salesInfo">Nuevo | {`${randomSales}`} vendidios </p>
     <div className="description-information-container">
-      <p>Herramienta De Limpieza De Teclado, Pc, Auriculares Airpod</p>
+      <p>{`${name}`}</p>
     </div>
     <div className="description-text-container">
-      <p>$243</p>
+      <p>{`${price}`}</p>
       
-      <p><span style={{fontSize:'20px', fontWeight:'400'}}>en</span> 3x{`$${priceMonthly}`} sin intereses</p>
-      <p>ver medios de pago</p> 
+        {status === true 
+        && (
+        <p
+          className="months-without"
+        >
+          <span
+            style={{fontSize:'20px', fontWeight:'400'}}
+            >en
+          </span>
+          3x
+          {`$${priceMonthly}`}sin intereses
+        </p>
+          )}
+      <p className="payment-method">ver medios de pago</p> 
     </div>
     <div
     style={{marginBottom:'20px'}}>
