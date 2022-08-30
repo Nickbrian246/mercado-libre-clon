@@ -1,6 +1,7 @@
 import { SalesPage } from "../Pages/salesPage";
 import { MainPage } from "../Pages/Main";
 import { PayPage } from "../Pages/payPage";
+import { CheckAndConfirm } from "../Pages/CheckNconfirm";
 
 
 const routeList = [
@@ -24,7 +25,14 @@ const routeList = [
   description: 'details about the pay',
   status: false,
   element: <PayPage path= '/payPage'/>
-},  
+}, 
+{
+  path:'/checkAndConfirm',
+  title:'pagina de rivision de la compra',
+  description: 'details about send and price check',
+  status: false,
+  element: <CheckAndConfirm path= '/checkAndConfirm'/>
+}, 
 ];
 
 

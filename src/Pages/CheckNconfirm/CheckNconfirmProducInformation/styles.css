@@ -1,0 +1,78 @@
+.productInformation-container{
+  padding: 25px 18px;
+}
+
+.productImageAndInformation-container{
+  display: flex;
+  min-width: 380px;
+  min-height: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.productPrice-container
+.product-send-free{
+  color: rgb(28, 194, 28);
+  font-size: 14;
+  font-weight: 400;
+  font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+}
+
+.productImageAndInformation-container
+.productImageAndInformation-Image{
+  width: 70px;
+  border-radius: 100%;
+}
+
+.productName{
+  color: rgba(0,0,0,.55);
+    line-height: 1.29;
+    font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+.productPrice-container{
+  min-width: 380px;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-top: 1px solid #ebebeb;
+}
+.price-container{
+  min-width: 380px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  border-top: 1px solid #ebebeb ;
+  padding:10px 15px ;
+}
+.coupon-container{
+  margin-top: 120px;
+  width: 360px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 15px;
+  border: 2px solid  #ebebeb  ;
+  cursor: pointer;
+}
+
+.coupon-container
+.text-container :nth-child(1){
+  font-size: 16px;
+  color:rgb(50, 62, 235) ;
+}
+.coupon-container
+.text-container :nth-child(2){
+  margin: 0px;
+  margin-left: 3px;
+}
+.coupon-container
+.icon-arrow{
+  font-size: 18px;
+
+}

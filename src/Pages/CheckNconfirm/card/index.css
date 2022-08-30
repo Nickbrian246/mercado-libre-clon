@@ -1,0 +1,43 @@
+.container{
+  max-width: 800px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+ 
+}
+.card-container{
+  padding: 10px 40px;
+  display: flex;
+  width: 100%;
+  height: 110px;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-Cp-container{
+  display: flex;
+  width: 36%;
+  height: 100px;
+  align-items: center;
+  justify-content: start;
+}
+.card-Cp-container .icon{
+  font-size: 18px;
+  margin-right: 10px;
+}
+.text-container{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.text-container :nth-child(1){
+  margin-bottom: 0px;
+}
+
+.payment-details{
+
+  margin-top: 10px;
+}
+
