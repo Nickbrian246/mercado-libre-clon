@@ -7,10 +7,8 @@ import {generateManyBooks} from '../../../../utils/fakerJS/fakedata';
 // **********************************************************************
 
 // libreria carousel****************************************************
-import Carousel, { centeredPlugin } from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
-import { slidesToShowPlugin } from '@brainhubeu/react-carousel';
-import { autoplayPlugin } from '@brainhubeu/react-carousel';
+import Glider from 'react-glider';
+import 'glider-js/glider.min.css';
 //**********************************************************************
 
 // components***********************************************************
@@ -34,10 +32,10 @@ useEffect(()=> {
 
   
 
-const slides2 = dataForCard.map((slide2) => (
-  <Card2 slide= {slide2} key = {slide2._id}/>
-)
-)
+// const slides2 = dataForCard.map((slide2) => (
+//   <Card2 slide= {slide2} key = {slide2._id}/>
+// )
+// )
   return (
     <> 
     <div className="carousel-container">
@@ -45,7 +43,17 @@ const slides2 = dataForCard.map((slide2) => (
         <h2 style={{display:'inline-block', marginRight:'50px'}}>Relacionado con tus visitas en Computación</h2>
         <span>Ver historial</span>
       </div>
-      <Carousel
+      <Glider
+        hasArrows={true}
+        slidesToShow={5}
+        slidesToScroll={5}
+>
+          {dataForCard.map((slide) => (
+              <Card2 slide= {slide} key = {slide._id}/>
+          ))}
+
+      </Glider>
+      {/* <Carousel
       
       plugins={[
       {
@@ -62,7 +70,7 @@ const slides2 = dataForCard.map((slide2) => (
         offset={0}
         itemWidth={250}
         slides={slides2}
-        />
+        /> */}
     </div>
     </>
   )

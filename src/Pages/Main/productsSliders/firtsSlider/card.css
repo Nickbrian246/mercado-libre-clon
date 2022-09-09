@@ -2,12 +2,13 @@
   width:224px;
   height: 350px;
   background:#ebebeb;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
 
 }
 .card-image{
-  width:224px;
-  height:224px;
+  max-width:270px;
+  max-height:240px;
   cursor:pointer;
   border-bottom: solid 1px #eaeaea;
 

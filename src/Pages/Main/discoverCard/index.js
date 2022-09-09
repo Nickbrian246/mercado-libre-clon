@@ -9,7 +9,7 @@ const DiscoverCards = () => {
   return (
     <>
     <h1 className="title-discover-outsideContainer">Descubre</h1>
-  <div className="container" >
+  <div className="container1" >
   {cardList.map((data) => (
       <Card data = {data} key={data.key}/>
     ))}

@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import Glider from 'react-glider';
+import 'glider-js/glider.min.css';
 
 // libreria faker****************************************************
 import {generateManyBooks} from '../../../../utils/fakerJS/fakedata'; 
@@ -64,9 +66,9 @@ const next2 = () => {
   console.log('this is testing', testing);
 }
 
-const slides = card.map((slide) => (
-  <Card1 slide= {slide} key = {slide._id}/>
-))
+// const slides = card.map((slide) => (
+//   <Card1 slide= {slide} key = {slide._id}/>
+// ))
   return (
     <> 
     <div className="carousel-container">
@@ -74,13 +76,23 @@ const slides = card.map((slide) => (
         <h2 style={{display:'inline-block', marginRight:'50px'}}>Basado en tu última visita</h2>
         <span>Ver historial</span>
       </div>
-      <Carousel
+      <Glider
+        hasArrows={true}
+        slidesToShow={5}
+        slidesToScroll={5}
+>
+          {card.map((slide) => (
+              <Card1 slide= {slide} key = {slide._id}/>
+          ))}
+
+      </Glider>
+      {/* <Carousel
       
       plugins={[
       {
         resolve: slidesToShowPlugin,
         options: {
-        numberOfSlides: 1
+        numberOfSlides: 2
         }
       },
       'clickToChange',
@@ -88,10 +100,10 @@ const slides = card.map((slide) => (
       'centered',
     ]}
     animationSpeed={500}
-        offset={0}
+        offset={5}
         itemWidth={250}
         slides={slides}
-        />
+        /> */}
     </div>
     </>
   )
