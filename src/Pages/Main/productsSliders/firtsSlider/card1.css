@@ -1,0 +1,38 @@
+
+.card-container-firstSlider{
+  width:224px;
+  height: 350px;
+  background:#ebebeb;
+  display: flex;
+  flex-direction: column;
+
+}
+.image-container-firstSlider{
+background-color: white;
+width:224px;
+display: flex;
+justify-content: center;
+
+}
+.card-image-firstSlider{
+  max-width:2224px;
+  max-height:240px;
+  cursor:pointer;
+  border-bottom: solid 1px #eaeaea;
+
+}
+.card-name-container-firstSlider{
+  width: 224px;
+  height:106px;
+  background: #ffff;
+  padding-top: 5px;
+  padding-left: 15px;
+  word-break: break-all;
+}
+.description-container-firstSlider{
+  width: 100%;
+  max-height: 23px;
+  overflow: hidden;
+}
+
+

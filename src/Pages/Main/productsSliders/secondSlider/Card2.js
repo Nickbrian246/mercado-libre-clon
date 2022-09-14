@@ -1,30 +1,33 @@
 import React from "react";
 
-import './card.css';
+import './card2.css';
 
 const Card2 = (props) => {
  const {
-  _id,
-  name,
-  price,
   image,
+  title,
+  price,
+  id,
+  description,
 } = props.slide;
   return (
     <>
-    <div className="card-container" >
-      <div>
+    <div className="card-container-secondSlider" >
+      <div className="image-container-secondSlider">
         <img 
-        className="card-image" 
+        className="card-image-secondSlider" 
         src= {`${image}`}
         alt="product"/>
 
       </div>
-      <div className="card-name-container">
-      <p>{`${name}`}</p>
+      <div className="card-name-container-secondSlider">
+      <div className="description-container-secondSlider">
+          <p>description</p>
+      </div>
       <p>{`$ ${price} MX`}</p>
       <p>hello there</p>
 
-      <p className="card-description-hover">descrptio onli if hoover</p>
+      <p className="card-description-hover-secondSlider">descrptio onli if hoover</p>
       </div>
 
     </div>

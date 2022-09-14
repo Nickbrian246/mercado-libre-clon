@@ -1,9 +1,9 @@
-.card-container-thirdSlider{
+.card-container-secondSlider{
   width:224px;
   height: 350px;
   background:#ebebeb;
-  display: inline-block;
-
+  display: flex;
+  flex-direction: column;
 }
 .image-container-secondSlider{
   background-color: white;
@@ -11,14 +11,14 @@
   display: flex;
   justify-content: center;
 }
-.card-image-thirdSlider{
+.card-image-secondSlider{
   max-width:224px;
   max-height:240px;
   cursor:pointer;
   border-bottom: solid 1px #eaeaea;
 
 }
-.card-name-container-thirdSlider{
+.card-name-container-secondSlider{
   width: 224px;
   height:106px;
   background: #ffff;
@@ -26,12 +26,14 @@
   padding-left: 15px;
   word-break: break-all;
 }
-.card-name-container-thirdSlider p{
+.card-name-container-secondSlider p{
   margin-bottom: 0px;
-  display: inline-block;;
+  display: inline-block;
 }
-.description-container-thirdSlider{
+.description-container-secondSlider{
   width: 100%;
   max-height: 23px;
   overflow: hidden;
 }
+
+

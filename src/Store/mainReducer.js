@@ -4,6 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   fakeInformation: [],
   fakeInformation2: [],
+  test:[]
 }
 
 export const mainSlice = createSlice ({
@@ -22,4 +23,4 @@ export const mainSlice = createSlice ({
 export default mainSlice.reducer;
 
 
-export const {setFakeDataInformation, setFakeDataInformation2} = mainSlice.actions;
+export const {setFakeDataInformation, setFakeDataInformation2,} = mainSlice.actions;

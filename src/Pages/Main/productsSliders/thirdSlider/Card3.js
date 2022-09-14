@@ -9,22 +9,25 @@ const Card3 = (props) => {
   price,
   image,
 } = props.slide;
+
   return (
     <>
-    <div className="card-container" >
-      <div>
+    <div className="card-container-thirdSlider" >
+      <div className="image-container-secondSlider">
         <img 
-        className="card-image" 
+        className="card-image-thirdSlider" 
         src= {`${image}`}
         alt="product"/>
 
       </div>
-      <div className="card-name-container">
-      <p>{`${name}`}</p>
+      <div className="card-name-container-thirdSlider">
+      <div className="description-container-thirdSlider">
+          <p>{name}</p>
+      </div>
       <p>{`$ ${price} MX`}</p>
       <p>hello there</p>
 
-      <p className="card-description-hover">descrptio onli if hoover</p>
+      <p className="card-description-hover-thirdSlider">descrptio onli if hoover</p>
       </div>
 
     </div>

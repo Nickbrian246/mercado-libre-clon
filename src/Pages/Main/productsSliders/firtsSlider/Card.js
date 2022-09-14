@@ -1,7 +1,7 @@
 import React from "react";
 
 /** CSS **************************************************************/
-import './card.css';
+import './card1.css';
 /******************************************************************** */
 
 /* React Redux* *******************************************************/
@@ -10,60 +10,63 @@ import { setProductSelected } from "../../../../Store/productSelected";
 /********************************************************************** */
 
 /* React Router********************************************************************* */
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 /*********************************************************************************** */
 
 const Card1 = (props) => {
-const {
-  image,
-  name,
-  price,
-  _id,
-  status,
-        } = props.slide;
 
-  const navigate= useNavigate()
-  const dispatch= useDispatch()
+  const {
+    image,
+    title,
+    price,
+    id,
+    description,
+  } = props.slide;
 
-  const handleClickContainer = ()=> {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const handleClickContainer = () => {
     dispatch(setProductSelected({
       price,
       image,
-      name,
-      _id,
-      status,
+      title,
+      id,
+
+      description
     }))
-      navigate('/producto');
+    navigate('/producto');
 
   }
 
   return (
     <>
-    <div className="card-container" onClick={()=> {handleClickContainer()}}>
-      <div>
-        <img 
-        className="card-image" 
-        src= {`${image}`}
-        alt="product"/>
+      <div className="card-container-firstSlider" onClick={() => { handleClickContainer() }}>
+        <div className="image-container-firstSlider">
+          <img
+            className="card-image-firstSlider"
+            src={`${image}`}
+            alt="product" />
+
+        </div>
+        <div className="card-name-container-firstSlider">
+          <div className="description-container-firstSlider">
+            <p>description</p>
+          </div>
+          <p>{`$ ${price} MX`}</p>
+          <p>hello there</p>
+
+          <p className="card-description-hover-firstSlider">description</p>
+        </div>
 
       </div>
-      <div className="card-name-container">
-      <p>{`${name}`}</p>
-      <p>{`$ ${price} MX`}</p>
-      <p>hello there</p>
 
-      <p className="card-description-hover">descrptio onli if hoover</p>
-      </div>
-
-    </div>
-    
     </>
   )
 };
-  
 
-export {Card1};
+export { Card1 };
 
 // style={{width:'224px', height:'330px', background:'white', }}
 // style = {{width:'224px', height:'224px', cursor:'pointer'}}
