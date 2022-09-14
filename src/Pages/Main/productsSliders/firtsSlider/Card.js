@@ -11,16 +11,15 @@ import { setProductSelected } from "../../../../Store/productSelected";
 
 /* React Router********************************************************************* */
 import { useNavigate } from "react-router-dom";
-
 /*********************************************************************************** */
 
 const Card1 = (props) => {
 
   const {
     image,
-    title,
+    name,
     price,
-    id,
+    _id,
     description,
   } = props.slide;
 
@@ -31,8 +30,8 @@ const Card1 = (props) => {
     dispatch(setProductSelected({
       price,
       image,
-      title,
-      id,
+      name,
+      _id,
 
       description
     }))

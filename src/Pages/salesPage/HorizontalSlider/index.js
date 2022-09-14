@@ -1,5 +1,5 @@
 // React// ***************************************************************
-import React, { useEffect,useState} from "react";
+import React, { useEffect} from "react";
 // **********************************************************************
 
 // libreria faker *******************************************************
@@ -7,9 +7,7 @@ import {generateManyBooks} from '../../../utils/fakerJS/fakedata';
 // **********************************************************************
 
 // libreria carousel****************************************************
-import Carousel from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
-import { slidesToShowPlugin } from '@brainhubeu/react-carousel';
+import Glider from 'react-glider';
 //**********************************************************************
 
 // components***********************************************************
@@ -22,6 +20,10 @@ import { useDispatch, useSelector} from "react-redux";
 import { setFakeDataInformation2 } from "../../../Store/mainReducer";
 //*****************..**************************************************** 
 
+//CSS ****************************************************************
+import './indexHorizontalSlider.css';
+//CSS ****************************************************************
+
 const HorizontalSlider = () => {
   const dispatch = useDispatch()
   const dataForCard = useSelector((state) => state.fakeDataInformation.fakeInformation2)
@@ -33,34 +35,27 @@ useEffect(()=> {
 },[])
 
 
-const slides2 = dataForCard.map((slide2) => (
-  <CardHorizontalSlider slide= {slide2} key = {slide2._id}/>
-))
+
   return (
     <> 
-    <div className="carousel-container">
-      <div className="carousel-title">
+    <div className="carousel-container-horizontalSlider">
+      <div >
         <h2 style={{display:'inline-block', marginRight:'50px'}}>Publicaciones del vendedor</h2>
       </div>
-      <Carousel
-      
-      plugins={[
-      {
-        resolve: slidesToShowPlugin,
-        options: {
-        numberOfSlides: 3
-        }
-      },
-      
-      'clickToChange',
-      'arrows',
-      
-    ]}
-    animationSpeed={500}
-        offset={-16}
-        itemWidth={250}
-        slides={slides2}
-        />
+    <div className="glider-container-HorizontalSlider">
+      <Glider
+              hasArrows={true}
+              slidesToShow={3}
+              slidesToScroll={3}
+        > 
+              {dataForCard.map((slide) => (
+                <CardHorizontalSlider slide={slide} key={slide._id} />
+              ))}
+
+      </Glider> 
+
+    </div>
+
     </div>
     </>
   )
@@ -68,3 +63,4 @@ const slides2 = dataForCard.map((slide2) => (
 
 
 export {HorizontalSlider};
+    

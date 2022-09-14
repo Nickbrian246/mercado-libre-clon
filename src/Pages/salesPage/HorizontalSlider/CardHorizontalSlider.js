@@ -11,20 +11,22 @@ const CardHorizontalSlider = (props) => {
 } = props.slide;
   return (
     <>
-    <div className="card-container" >
-      <div>
+    <div className="card-container-horizontalSlider" >
+      <div className="image-container-horizontalSlider">
         <img 
-        className="card-image" 
+        className="card-image-horizontalSlider" 
         src= {`${image}`}
         alt="product"/>
 
       </div>
-      <div className="card-name-container">
-      <p>{`${name}`}</p>
+      <div className="card-name-container-horizontalSlider">
+      <div className="description-Container-horizontalSlider">
+        <p>{`${name}`}</p>
+      </div>
       <p>{`$ ${price} MX`}</p>
       <p>hello there</p>
 
-      <p className="card-description-hover">descrptio onli if hoover</p>
+      <p className="card-description-hover-horizontalSlider">descrptio onli if hoover</p>
       </div>
 
     </div>

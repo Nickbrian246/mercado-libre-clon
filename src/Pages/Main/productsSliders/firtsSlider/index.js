@@ -18,16 +18,15 @@ import { generateManyBooks } from '../../../../utils/fakerJS/fakedata';
 import { Card1 } from './Card';
 import { useEffect } from "react";
 //******************************************************************
-import './indexFirstSlider.css'
 
-import { useDispatch } from "react-redux";
-import { fetchProduct } from "./fetchData";
+// CSS*******************************************************
+import './indexFirstSlider.css'
+//******************************************************************
+
 
 
 const CarouselComponent = () => {
-  const [data1,setData1 ] = useState([])
-  const dispatch = useDispatch();
- 
+  const [data1,setData1 ] = useState([]);
 
   useEffect(()=> {
     const card = generateManyBooks(15);
@@ -35,19 +34,6 @@ const CarouselComponent = () => {
   
   },[])
   
-// useEffect(()=>{
-//   const fetchProduct =  async() => {
-//     const res = await fetch('https://fakestoreapi.com/products?limit=15')
-//     const data = await res.json();
-//     setData1(data)
-//     return data
-
-// }
-// fetchProduct()
-// },[])
-
-
-
   return (
   
       <div className="carousel-container-firstSlider">
@@ -77,3 +63,14 @@ const CarouselComponent = () => {
 
 
 export { CarouselComponent };
+
+// useEffect(()=>{
+//   const fetchProduct =  async() => {
+//     const res = await fetch('https://fakestoreapi.com/products?limit=15')
+//     const data = await res.json();
+//     setData1(data)
+//     return data
+
+// }
+// fetchProduct()
+// },[])

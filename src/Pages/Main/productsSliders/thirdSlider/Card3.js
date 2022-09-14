@@ -1,18 +1,43 @@
 import React from "react";
 
+/* React Redux* *******************************************************/
+import { useDispatch } from "react-redux";
+import { setProductSelected } from "../../../../Store/productSelected";
+/********************************************************************** */
+
+/* React Router********************************************************************* */
+import { useNavigate } from "react-router-dom";
+/*********************************************************************************** */
 import './card3.css'
 
 const Card3 = (props) => {
  const {
-  _id,
-  name,
-  price,
   image,
+    name,
+    price,
+    _id,
+    description,
 } = props.slide;
+
+const navigate = useNavigate()
+const dispatch = useDispatch()
+
+const handleClickContainer = () => {
+  dispatch(setProductSelected({
+    price,
+    image,
+    name,
+    _id,
+
+    description
+  }))
+  navigate('/producto');
+
+}
 
   return (
     <>
-    <div className="card-container-thirdSlider" >
+    <div className="card-container-thirdSlider" onClick={() => { handleClickContainer() }} >
       <div className="image-container-secondSlider">
         <img 
         className="card-image-thirdSlider" 

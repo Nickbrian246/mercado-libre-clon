@@ -14,8 +14,6 @@ import { Questions } from "./questions";
 import { RateStart } from "./rateStart";
 import { QuestionsRate } from "./questionsRate";
 
-
-
 // ****************************************************
 
 import { Col,Row } from "antd/lib/grid";
