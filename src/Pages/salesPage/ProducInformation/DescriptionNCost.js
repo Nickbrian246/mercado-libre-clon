@@ -14,21 +14,16 @@ import { Rate } from 'antd';
 import  {useSelector} from 'react-redux'
 //*****************************************************//
 
-
-
-
 const DescriptionNCost = () => {
   const {
     name,
     price,
     status,
-          } = useSelector((state)=> state.productSelected.productSelected);
+  } = useSelector((state)=> state.productSelected.productSelected);
 
 const randomSales = Math.floor(Math.random() *1000);
 const priceMonthlyCalculus = (price / 3);
 const priceMonthly= priceMonthlyCalculus.toFixed(2);// trunca a 2 decimales
-
-
 
 const handleRate = (value) => {
 console.log(value, 'soy valor de ratio, en folder de prodcutInformation, descripcionNcost');
@@ -41,7 +36,7 @@ console.log(value, 'soy valor de ratio, en folder de prodcutInformation, descrip
       <p>{`${name}`}</p>
     </div>
     <div className="description-text-container">
-      <p>{`${price}`}</p>
+      <p>{`$${price}`}</p>
       
         {status === true 
         && (
@@ -69,6 +64,5 @@ console.log(value, 'soy valor de ratio, en folder de prodcutInformation, descrip
     </>
   )
 };
-
 
 export {DescriptionNCost};
