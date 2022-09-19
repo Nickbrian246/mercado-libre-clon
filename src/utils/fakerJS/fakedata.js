@@ -1,5 +1,3 @@
-import React from "react";
-
 import { faker } from '@faker-js/faker';
 
 
@@ -91,4 +89,33 @@ const generateManyCreditCards = (size) => {
   return [...fakeComments]
 }
 export {generateManyCreditCards}
+/************************************************************************************************ */
+
+/*Generador de imagenes * *************************************************************************/
+
+const generateImages = () => {
+
+  return {
+  images:faker.image.food(),
+  id: faker.datatype.uuid(),
+  status:false,
+  id2:faker.datatype.uuid(),
+  }
+    
+}
+
+const generateManyImages = (size) => {
+  const limit = size ?? 6;
+  const fakeComments = [];
+  for (let index = 0; index < limit; index += 1 ) {
+    fakeComments.push(generateImages());
+    
+  }
+
+  return [...fakeComments]
+}
+export {generateManyImages}
+
+
+
 /************************************************************************************************ */

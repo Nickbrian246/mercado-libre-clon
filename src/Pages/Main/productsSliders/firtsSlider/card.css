@@ -1,0 +1,24 @@
+.card-container{
+  width:224px;
+  height: 350px;
+  background:#ebebeb;
+  display: inline-block;
+
+}
+.card-image{
+  width:224px;
+  height:224px;
+  cursor:pointer;
+  border-bottom: solid 1px #eaeaea;
+
+}
+.card-name-container{
+  width: 100%;
+  height:106px;
+  background: #ffff;
+}
+.card-name-container p{
+margin-bottom: 0px;
+}
+
+

@@ -79,12 +79,9 @@ const PayPage = () => {
 
           <Col span={24}>
             <BankCards setIsCardSelected={setIsCardSelected}/>
+          
           </Col>
 
-          <Col style={{ marginTop: '80px' }} span={24}>
-            <p>Con otras formas de pago</p>
-            <BankotherCards  setIsCardSelected={setIsCardSelected}/>
-          </Col>
 
           <Col style={{ marginTop: '80px', marginBottom: '50px' }} span={24}>
             <div style={{ display: 'flex', justifyContent: 'flex-end' }}>

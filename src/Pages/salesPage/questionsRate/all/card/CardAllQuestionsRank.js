@@ -12,23 +12,14 @@ const CardAllQuestionsRank= (props ) => {
   const [likeButton, setLikeButton] = useState(false);
   const [disLikeButton, setDislikeButton] = useState(false);
 
-  
-
   const handleLikeButton= () => {
     setLikeButton(!likeButton);
     setDislikeButton(false)
-    
-
   }
   const handleDisLikeButton= () => {
     setDislikeButton(!disLikeButton);
     setLikeButton(false)
-  
-
   }
-
-
-
 
   return(
     <>

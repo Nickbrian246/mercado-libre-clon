@@ -29,7 +29,8 @@ const CardOtherWays = (props) => {
   }
 
   return (
-    <>
+    <> 
+   
       <div className='cardBank-container' onClick={()=>{handleClick()}}>
         <Radio value={id}>
           <div style={{ width: '100%' }}>

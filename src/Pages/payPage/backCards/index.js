@@ -13,10 +13,12 @@ import { setCardInformation } from "../../../Store/bankCards";
 
 /*Components* *********************************************************************/
 import { CardBank } from "./card";
+import { CardOtherWays } from "./card/cardOtherPaymentWays/CardOtherWays";
 /**********************************************************************************/
 
 /*Bank List* *********************************************************************/
 import { bankList } from "./banckCardList/BankImagesList";
+import { constantMethod } from "./banckCardList/BankImagesList";
 /**********************************************************************************/
 
 const innerJoin = ({ bankList, data, key }) => {
@@ -55,9 +57,15 @@ const BankCards = () => {
   return (
     <>
       <Radio.Group value={value} onChange={onChange} style={{ width: '750px', height: '92px' }}>
+
         {newArray.map((data) => (
           <CardBank data={data} key={data.id}  />
         ))}
+      
+        {constantMethod.map((data) => (
+          <CardOtherWays data={data} key={data.id} />
+        ))}
+
       </Radio.Group>
     </>
   )

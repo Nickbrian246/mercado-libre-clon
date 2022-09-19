@@ -13,6 +13,7 @@ import { Description } from "./description";
 import { Questions } from "./questions";
 import { RateStart } from "./rateStart";
 import { QuestionsRate } from "./questionsRate";
+import { ProductViewer } from "./productViewer";
 
 // ****************************************************
 
@@ -36,6 +37,11 @@ const SalesPage = () => {
     <Row gutter={[10,10]} style={{width:'1218px', background:'white', height:'3400px'}}>
 
         <Col  span={16} >
+        <Row style={{marginTop:'30px', }}  justify="center">
+          <Col  >
+          <ProductViewer/>
+          </Col>
+        </Row>
         <Row style={{marginTop:'30px', }}  justify="center">
           <Col  >
           <HorizontalSlider/>
