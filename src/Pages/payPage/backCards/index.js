@@ -61,6 +61,9 @@ const BankCards = () => {
         {newArray.map((data) => (
           <CardBank data={data} key={data.id}  />
         ))}
+        <div>
+          Otras formas de pago
+        </div>
       
         {constantMethod.map((data) => (
           <CardOtherWays data={data} key={data.id} />

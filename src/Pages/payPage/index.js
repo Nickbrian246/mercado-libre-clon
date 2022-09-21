@@ -20,7 +20,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const PayPage = () => {
-  const [isCardSelcected, setIsCardSelected] = useState(false);
+  const [isCardSelected, setIsCardSelected] = useState(false);
 
 
 
@@ -85,7 +85,7 @@ const PayPage = () => {
 
           <Col style={{ marginTop: '80px', marginBottom: '50px' }} span={24}>
             <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            { isCardSelcected 
+            { isCardSelected 
               ?  
             <Button
                 Button

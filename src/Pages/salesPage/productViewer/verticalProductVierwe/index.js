@@ -8,14 +8,12 @@ import './verticalProductViewer.css';
 
 const VerticalProductViewer = () => {
 const [imageList, setImageList] = useState([]);
-const [currentPosition, setCurrentPosition] = useState('');
-const [isActive, setIsActive] = useState(false)
+const [position, setPosition] = useState('');
 
 useEffect(()=> {
   const images = generateManyImages();
   setImageList(images)
 },[]);
-
 
 return (
   <>
@@ -24,9 +22,8 @@ return (
         <CardVerticalProduct
         data = {data}
         key={data.id}
-        setCurrentPosition = {setCurrentPosition}
-        setIsActive={setIsActive}
-        isActive={isActive}
+        setPosition={setPosition}
+        position={position}
         />
     ))}
 

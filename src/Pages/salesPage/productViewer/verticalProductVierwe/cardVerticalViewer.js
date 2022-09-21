@@ -1,24 +1,23 @@
 import React from 'react';
-import { useState } from 'react';
 import './cardVerticalViewer.css';
 
 const CardVerticalProduct = ({
   data,
-  setCurrentPosition,
-  setIsActive,
-  isActive
+  setPosition,
+  position,
 }) => {
+
   const {
     images,
     id,
     status,
   } =data;
 
-  const handleClickContainer = () => {
-    setCurrentPosition(id);
-    setIsActive(true);
-  }
+  const isActive = position === id;
 
+  const handleClickContainer = () => {
+    setPosition(id);
+  }
 
   return (
     <>
