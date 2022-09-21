@@ -12,6 +12,7 @@ import salesInformationReducer from '../src/Store/salesPage';
 import BankCardsSlice from './Store/bankCards';
 import productSelected from './Store/productSelected';
 import cardSelected from './Store/cardSelected';
+import imageSelected from './Store/imageSelected';
 
 
 const store = configureStore({
@@ -21,6 +22,7 @@ const store = configureStore({
     BankCardsSlice: BankCardsSlice,
     productSelected: productSelected,
     cardSelected: cardSelected,
+    imageSelected:imageSelected,
 
   },
 })
