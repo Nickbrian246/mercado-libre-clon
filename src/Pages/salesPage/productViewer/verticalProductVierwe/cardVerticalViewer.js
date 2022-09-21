@@ -33,7 +33,8 @@ const CardVerticalProduct = ({
       }
       onClick={()=> {handleClickContainer()}}>
       <img style={{
-        width:'100px'
+        width:'100px',
+        borderRadius:'2px'
       }} src={images} alt="products view"/>
     </div>
     
