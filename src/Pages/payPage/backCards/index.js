@@ -32,7 +32,9 @@ const innerJoin = ({ bankList, data, key }) => {
   return newArray;
 }
 
-const BankCards = () => {
+const BankCards = ({
+  setIsCardSelected,
+}) => {
   const [value, setValue] = useState(1);
   const dispatch = useDispatch();
   const data = useSelector((state) => state.BankCardsSlice.BankCards);
@@ -45,6 +47,7 @@ const BankCards = () => {
    */
   const onChange = (e) => {
     setValue(e.target.value)
+    setIsCardSelected(true);
   }
 
   useEffect(() => {
@@ -61,10 +64,9 @@ const BankCards = () => {
         {newArray.map((data) => (
           <CardBank data={data} key={data.id}  />
         ))}
-        <div>
-          Otras formas de pago
+        <div style={{marginTop:'20px'}}>
+          <p style={{fontSize:'16px'}}>Otras formas de  pago</p>
         </div>
-      
         {constantMethod.map((data) => (
           <CardOtherWays data={data} key={data.id} />
         ))}

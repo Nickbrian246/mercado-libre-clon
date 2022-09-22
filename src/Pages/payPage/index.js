@@ -117,7 +117,7 @@ const PayPage = () => {
           background: '#f5f5f5',
           width: '400px',
           height: '800px',
-          marginTop: '-290px',
+          marginTop: '-278px',
         }}>
           <Col>
             <ProductInformation />
