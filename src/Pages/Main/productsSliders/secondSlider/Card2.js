@@ -2,6 +2,7 @@ import React from "react";
 /* React Redux* *******************************************************/
 import { useDispatch } from "react-redux";
 import { setProductSelected } from "../../../../Store/productSelected";
+import { setImageSelected } from "../../../../Store/imageSelected";
 /********************************************************************** */
 
 /* React Router********************************************************************* */
@@ -31,6 +32,10 @@ const Card2 = (props) => {
       price,
       _id,
       description,
+    }))
+    dispatch(setImageSelected({
+      images:image,
+      id:_id
     }))
     navigate('/producto')
   }

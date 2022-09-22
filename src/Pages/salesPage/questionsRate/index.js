@@ -47,32 +47,24 @@ useEffect(()=> {
   dispatch(setPositivesComments(positives))
 },[])
   
-
-
-
-
-
   const handleAllButton = () => {
     setAllButtons(true);
     setPositivesButtons(false)
     setNegativesButtons(false);
-
   }
 
   const  handlePositivesButtons = () => {
     setAllButtons(false);
     setPositivesButtons(true)
     setNegativesButtons(false);
-
   }
 
   const handleNegativesButtons = () => {
     setAllButtons(false);
     setPositivesButtons(false)
     setNegativesButtons(true);
-
-
   }
+  
   return(
     <>
     <div className="questionRate-Container">

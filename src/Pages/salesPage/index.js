@@ -34,7 +34,7 @@ const SalesPage = () => {
 
 
     <Row justify="center"> 
-    <Row gutter={[10,10]} style={{width:'1218px', background:'white', height:'3400px'}}>
+    <Row gutter={[10,10]} style={{width:'1218px', background:'white', height:'4400px'}}>
 
         <Col  span={16} >
         <Row style={{marginTop:'30px', }}  justify="center">
