@@ -13,6 +13,7 @@ import BankCardsSlice from './Store/bankCards';
 import productSelected from './Store/productSelected';
 import cardSelected from './Store/cardSelected';
 import imageSelected from './Store/imageSelected';
+import addCard from './Store/addCard';
 
 
 const store = configureStore({
@@ -23,6 +24,7 @@ const store = configureStore({
     productSelected: productSelected,
     cardSelected: cardSelected,
     imageSelected:imageSelected,
+    addCard:addCard
 
   },
 })
