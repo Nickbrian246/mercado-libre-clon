@@ -7,7 +7,7 @@ import { useState } from "react";
 
 
 const ShoppingCar = ( ) => {
-  const [modalState, setModalState] = useState(true);
+  const [modalState, setModalState] = useState(false);
   const cartproduct= useSelector((state)=> state.addCard.addCard);
   const length= cartproduct.length;
 
@@ -22,7 +22,7 @@ const ShoppingCar = ( ) => {
     <RiShoppingCartLine style={{fontSize:'18px'}} onClick={()=> { handleModalState()}}/>
     <div style={{position:'absolute',top:'-11px', right:'11px'}}>
       {length>=1 && (
-        <Badge size="small" style={{fontSize:'13px'}}
+        <Badge onClick={()=> handleModalState()} size="small" style={{fontSize:'13px'}}
         count={length}/>
       )}
     </div>
