@@ -15,6 +15,9 @@ import { PromotionCard } from "./promotionCard";
 import { BenefitsSlider } from "./benefits";
 import { DiscoverCards } from "./discoverCard";
 import { CollectionsGrid } from "./collectionsGrid";
+import { useSearchParams } from "react-router-dom";
+import { CarouselComponentMain } from "../../components/carouselHomeComponent/carouselWithTitle";
+import { useState, useEffect } from "react";
 // ****************************************************************
 
 
@@ -24,9 +27,25 @@ import { CollectionsGrid } from "./collectionsGrid";
 // import { setFakeDataInformation } from "../../Store/mainReducer";
 // import {useSelector} from 'react-redux'
 // // 
+const BASE_URL = process.env.REACT_APP_API_KEY
 
 const MainPage = () => {
-
+  const [productsGroup,  setProductsGroup] = useState([])
+  const fetchData = async () => {
+    try {
+      const data = await fetch(`${BASE_URL}products?limit=15`);
+      const response = await data.json()
+      return response
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  useEffect(()=> {
+    // const card = generateManyBooks(15);
+    // setData1(card)
+    fetchData().then((res) => setProductsGroup(res))
+    .catch((err) => console.log(err))
+  },[])
 
   return (
     <>
@@ -44,52 +63,59 @@ const MainPage = () => {
 
     </Row>
 
-    <Row style={{marginTop:'30px'}}  justify="center">
+    <Row style={{marginTop:'50px'}}  justify="center">
     <Col >
       <BanckAndPayment/>
     </Col>
-
     </Row>
 
-    <Row style={{marginTop:'30px', }}  justify="center">
-    <Col style={{width:'1340px',height:'400px'}} >
+    <Row style={{marginTop:'50px', }}  justify="center">
+    <Col style={{maxWidth:'1230px',height:'400px'}} >
       <CarouselComponent/>
     </Col>
 
     </Row>
 
-    <Row style={{marginTop:'30px', }}  justify="center">
-    <Col style={{width:'1340px',height:'400px'}} >
-      <CarouselComponent2/>
+    <Row style={{marginTop:'50px', }}  justify="center">
+    <Col style={{maxWidth:'1230px',height:'400px'}} >
+      <CarouselComponentMain
+      productsGroup = {productsGroup}
+      title = "Recientes"
+      subTitle = "como no"
+      />
     </Col>
 
     </Row>
+    
 
-    <Row style={{marginTop:'30px', }}  justify="center">
-    <Col style={{width:'1340px',height:'400px'}} >
-      <CarouselComponent3/>
+    <Row style={{marginTop:'50px', }}  justify="center">
+    <Col style={{maxWidth:'1230px',height:'400px'}} >
+    <CarouselComponentMain
+      productsGroup = {productsGroup}
+      title = "Recientes"
+      />
     </Col>
     </Row>
 
-    <Row style={{marginTop:'30px', }}  justify="center">
+    <Row style={{marginTop:'50px', }}  justify="center">
     <Col style={{width:'1340px',height:'400px'}} >
       <PromotionCard/>
     </Col>
     </Row>
 
-    <Row style={{marginTop:'30px', }}  justify="center">
+    <Row style={{marginTop:'50px', }}  justify="center">
     <Col style={{width:'1340px',height:'400px'}} >
       <BenefitsSlider/>
     </Col>
     </Row>
 
-    <Row style={{marginTop:'30px', }}  justify="center">
+    <Row style={{marginTop:'50px', }}  justify="center">
     <Col style={{width:'1340px',height:'400px'}} >
       <DiscoverCards/>
     </Col>
     </Row>
 
-    <Row style={{marginTop:'30px', }}  justify="center">
+    <Row style={{marginTop:'50px', }}  justify="center">
     <Col style={{width:'1340px',height:'400px'}} >
       <CollectionsGrid/>
     </Col>

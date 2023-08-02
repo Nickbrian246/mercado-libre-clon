@@ -17,45 +17,43 @@ import { generateManyBooks } from '../../../../utils/fakerJS/fakedata';
 // componnent*******************************************************
 import { Card1 } from './Card';
 import { useEffect } from "react";
+import {CostumeCarousel} from "../../../../components/carousel/Carousel"
 //******************************************************************
 
 // CSS*******************************************************
-import './indexFirstSlider.css'
+import classes from  './IndexFirstSlider.module.css'
 //******************************************************************
-
-
+const BASE_URL = process.env.REACT_APP_API_KEY
+const fetchData = async () => {
+  try {
+    const data = await fetch(`${BASE_URL}products?limit=15`);
+    const response = await data.json()
+    return response
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 const CarouselComponent = () => {
   const [data1,setData1 ] = useState([]);
-
   useEffect(()=> {
-    const card = generateManyBooks(15);
-    setData1(card)
-  
+    // const card = generateManyBooks(15);
+    // setData1(card)
+    fetchData().then((res) => setData1(res))
+    .catch((err) => console.log(err))
   },[])
   
   return (
   
-      <div className="carousel-container-firstSlider">
-        <div className="carousel-title">
-          <h2 style={{ display: 'inline-block', marginRight: '50px' }}>Basado en tu última visita</h2>
-          <span>Ver historial</span>
-        </div>
-        
-        <div className="glider-container-firstSlider">
-          <Glider
-            hasArrows={true}
-            slidesToShow={5}
-            slidesToScroll={2}
-            
-            
-          > 
-            {data1.map((slide) => (
-              <Card1 slide={slide} key={slide._id} />
-            ))}
-
-          </Glider> 
-        </div>
+      <div className={classes.carouselContainerFirstSlider}>
+          <div >
+            <h2 >Basado en tu última visita</h2>
+            <span>Ver historial</span>
+          </div>
+          
+            <CostumeCarousel
+            productsGroup = {data1}
+          />
       </div>
   
   )
@@ -74,3 +72,19 @@ export { CarouselComponent };
 // }
 // fetchProduct()
 // },[])
+
+  /* {data1.length>0 && (
+      <div className={classes.gliderContainerHorizontalSlider}>
+      <Glider
+        hasArrows={true}
+        slidesToShow={5}
+        slidesToScroll={2}
+      > 
+        { data1.length >0 && data1.map((slide) => (
+          <Card1 slide={slide} key={slide.id} />
+        ))}
+
+      </Glider> 
+    </div>
+
+  )} */

@@ -1,7 +1,7 @@
 import React from "react";
 
 /** CSS **************************************************************/
-import './card1.css';
+import classes from "./Card1.module.css";
 /******************************************************************** */
 
 /* React Redux* *******************************************************/
@@ -13,16 +13,16 @@ import { setImageSelected } from "../../../../Store/imageSelected";
 /* React Router********************************************************************* */
 import { useNavigate } from "react-router-dom";
 /*********************************************************************************** */
+import {HiLightningBolt}  from "react-icons/hi"
 
 const Card1 = (props) => {
-
   const {
     image,
     name,
     price,
     _id,
     description,
-  } = props.slide;
+  } = props;
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -41,27 +41,37 @@ const Card1 = (props) => {
       id:_id,
     }))
     navigate('/producto');
-
   }
-
+  let offert = Math.random() * (1 - 0 ) + 0;
   return (
     <>
-      <div className="card-container-firstSlider" onClick={() => { handleClickContainer() }}>
-        <div className="image-container-firstSlider">
+      <div className={classes.cardContainerFirstSlider} onClick={() => { handleClickContainer() }}>
+        <div className={classes.imageContainerFirstSlider}>
           <img
-            className="card-image-firstSlider"
+            className={classes.cardImageFirstSlider}
             src={`${image}`}
             alt="product" />
 
         </div>
-        <div className="card-name-container-firstSlider">
-          <div className="description-container-firstSlider">
-            <p>description</p>
-          </div>
-          <p>{`$ ${price} MX`}</p>
-          <p>hello there</p>
+        <div className={classes.cardNameContainerFirstSlider}>
+          <p className={classes.DescriptionContainerPrice}>{`$${price} `}</p>
+          {
+            offert >0.50 && (
+              <div className={classes.DescriptionOfferContainer}>
+              <p className={classes.DescriptionOfferText}>
+                Envio Gratis
+              </p>
+              <span  className={classes.DescriptionOfferIcon}>
+              <HiLightningBolt/>
+              </span>
+              <p  className={classes.DescriptionOfferTextFull}>
+              FULL
+              </p>
+            </div>
+            )
+          }
+          <p className={classes.DescriptionContainerDescription}>{description}</p>
 
-          <p className="card-description-hover-firstSlider">description</p>
         </div>
 
       </div>
