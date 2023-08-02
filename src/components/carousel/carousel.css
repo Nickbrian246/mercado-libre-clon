@@ -8,7 +8,7 @@
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  gap: 10px;
+  gap: 23px;
   position: relative;
   transition: transform 0.3s ease; 
   width: calc(100% * 5); 
@@ -24,7 +24,6 @@
   align-items: center;
   font-size: 16px;
 }
-/* ... (rest of the CSS remains the same) */
 
 .carousel-LeftButton{
   cursor: pointer;
