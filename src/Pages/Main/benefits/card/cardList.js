@@ -1,9 +1,7 @@
-import React from "react";
-
 
 const cardList = [
   {
-    src: 'https://http2.mlstatic.com/resources/frontend/statics/loyal/comboplus-brand.png?v=1',
+    src: 'https://http2.mlstatic.com/resources/frontend/statics/loyal/partners/widget-l6/dplus.svg',
     topText:'Disney y Star+ sin cargo',
     price:' 100% OFF',
     subscriptionInfo:'Suscribiendote al nivel 6',

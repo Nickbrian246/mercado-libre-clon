@@ -1,0 +1,10 @@
+.footerNavButtonContainer{
+    height: 64px;
+    width: 100%;
+    background-color: red;
+}
+.headerFooterNav{
+    width: 156px;
+    height: max-content;
+    padding: 5px;
+}

@@ -23,6 +23,7 @@ const GeneralProductCard = (props) => {
     price,
     _id,
     description,
+    isDiscount,
   } = props;
 
   const navigate = useNavigate()
@@ -60,7 +61,7 @@ const GeneralProductCard = (props) => {
         <article className= {classes.PriceProductContainer}>
           <p className={`${offers < 0.7 ? classes.price : classes.priceMarginForNoFreeShipping}`}>${price}</p>
         </article>
-        {offers < 0.7 && (
+        {(offers < 0.7  || isDiscount) && (
           <div className={classes.freeShippingContainer}>
             <p className= {classes.freeShipping}>
                 Envío Gratis

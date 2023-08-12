@@ -3,12 +3,12 @@ import React from "react";
 
 const cardList = [
   {
-    src:'	https://http2.mlstatic.com/resources/frontend/statics/loyal/partners/widget-l6/d+.svg',
+    src:'https://http2.mlstatic.com/resources/frontend/statics/loyal/partners/widget-l6/dplus.svg',
     description:'Disney+ sin cargo',
     price:','
   },
   {
-    src:'	https://http2.mlstatic.com/resources/frontend/statics/loyal/partners/widget-l6/star+.svg',
+    src:'https://http2.mlstatic.com/resources/frontend/statics/loyal/partners/widget-l6/starplus.svg',
     description:'Start+ sin cargo',
     price:','
   },

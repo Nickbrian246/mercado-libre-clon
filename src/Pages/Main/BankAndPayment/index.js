@@ -12,15 +12,15 @@ const BanckAndPayment = () => {
   return (
     <>
     <Row>
-    <Col>
-    <PaySafe/>
-    </Col>
-    <Col>
-    <InfoBank/>
-    </Col>
-    <Col>
-    <MorePaymentMethod/>
-    </Col>
+      <Col>
+        <PaySafe/>
+      </Col>
+      <Col>
+        <InfoBank/>
+      </Col>
+      <Col>
+        <MorePaymentMethod/>
+      </Col>
 
     </Row>
     </>

@@ -2,29 +2,12 @@ import React from "react";
 import { useState } from "react";
 
 // component*******************************************************
-import { useEffect } from "react";
 import { CostumeCarousel } from "../../carousel/Carousel";
 //******************************************************************
 
 // CSS*******************************************************
 import classes from  './IndexFirstSlider.module.css'
 //******************************************************************
-// const BASE_URL = process.env.REACT_APP_API_KEY
-// const fetchData = async () => {
-//   try {
-//     const data = await fetch(`${BASE_URL}products?limit=15`);
-//     const response = await data.json()
-//     return response
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-// useEffect(()=> {
-//   // const card = generateManyBooks(15);
-//   // setData1(card)
-//   fetchData().then((res) => setData1(res))
-//   .catch((err) => console.log(err))
-// },[])
 
 const CarouselComponentMain = (props)=> {
   const {
@@ -47,7 +30,6 @@ const CarouselComponentMain = (props)=> {
             productsGroup = {productsGroup}
           />
       </div>
-  
   )
 };
 

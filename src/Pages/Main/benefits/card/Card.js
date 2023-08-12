@@ -22,7 +22,14 @@ const {src, topText,price,subscriptionInfo,background} = props.data;
 
     
   </div>
-  <div style={{display:'flex', position:'absolute', marginTop:'-100px',marginLeft:'10px', cursor:'pointer', width:'384px', height:'112px',marginTop:'40%'}}>
+  <div style={{
+    display:'flex',
+    position:'absolute',
+    marginLeft:'10px',
+    cursor:'pointer',
+    width:'384px',
+    height:'112px',
+    marginTop:'40%'}}>
       <div style={{width:'80px', height:'80px'}} >
         <img style={{ borderRadius:'10px',width:'80px', height:'80px'}} src= { `${src}`}alt="" />
       </div>

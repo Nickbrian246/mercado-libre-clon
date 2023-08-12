@@ -1,0 +1,76 @@
+body{
+    --linkColor:#3483fa;
+    --textInformationColor:#737373;
+}
+.footerInformationContainer {
+    max-width:1200px ;
+    height: fit-content;
+    background-color: #ffff;
+    display: flex;
+    flex-direction: column  ;
+}
+.choosePaymentDivider::before{
+    background-color: #e2e2e2;
+    content: "";
+    display: block;
+    height: 65px;
+    margin-top: -32.5px;
+    position: absolute;
+    top: 50%;
+    width: 1px;
+    left: 0;
+}
+.choosePaymentDivider::after{
+    background-color: #e2e2e2;
+    content: "";
+    display: block;
+    height: 65px;
+    margin-top: -32.5px;
+    position: absolute;
+    top: 50%;
+    width: 1px;
+    right: 0;
+}
+.choosePaymentDivider{
+    display: flex;
+    flex-direction: column;
+    max-width:  33.3333333333%;
+    max-height: 260px;
+    padding: 35px 45px 20px;
+    position: relative;
+}
+.choosePayment{
+    display: flex;
+    flex-direction: column;
+    max-width:  33.3333333333%;
+    max-height: 260px;
+    padding: 35px 45px 20px;
+    position: relative;
+}
+.link{
+    color:var(--linkColor   )
+}
+.IconContianer{
+    width: 310px;
+    height: 55px;
+    font-size: 19px;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+}
+.textContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.textInformation{
+    color:var(--textInformationColor);
+    text-align: center;
+}
+.link{
+    text-align: center;
+}
+.link:hover{
+    text-decoration: line-through;
+}

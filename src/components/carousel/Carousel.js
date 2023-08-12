@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import './carousel.css';
+import  carouselStyles from './carousel.module.css';
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { GeneralProductCard } from '../generalProductCard/GeneralProductCard';
 
 const ITEMS_PER_PAGE = 5;
 
 const CostumeCarousel = (props) => {
-  const { productsGroup } = props;
+  const { productsGroup, isDiscount } = props;
   const [currentPage, setCurrentPage] = useState(0);
 
   const handlePrevPage = () => {
@@ -23,8 +23,8 @@ const CostumeCarousel = (props) => {
   const translateValue = `translateX(-${currentPage * (100 / ITEMS_PER_PAGE)}%)`;
 
   return (
-    <div className="carousel">
-      <div className="carousel-container" style={{ transform: translateValue }}>
+    <div className={carouselStyles.carousel}>
+      <div className={carouselStyles.carouselContainer} style={{ transform: translateValue }}>
         {productsGroup.map((item) => (
           <GeneralProductCard
             key={item.id}
@@ -33,14 +33,29 @@ const CostumeCarousel = (props) => {
             price={item.price}
             description={item.description}
             _id={item.id}
+            isDiscount = {isDiscount}
           />
         ))}
       </div>
-      <button className={`${currentPage === 0 ? "hidden" : "carousel-LeftButton"}`} onClick={handlePrevPage}>
-        <span className='carouselArrow-left'><AiOutlineArrowLeft /></span>
+      <button
+      className={`
+      ${currentPage === 0 
+      ? carouselStyles.hidden 
+      : carouselStyles.carouselLeftButton
+      }`} 
+      onClick={handlePrevPage}
+      >
+        <span className={carouselStyles.carouselArrowLeft}><AiOutlineArrowLeft /></span>
       </button>
-      <button className={`${currentPage >= Math.ceil(productsGroup.length / ITEMS_PER_PAGE) - 1 ? "hidden" : "carousel-RightButton"}`} onClick={handleNextPage}>
-        <span className='carouselArrow-right'><AiOutlineArrowLeft /></span>
+      <button
+      className={`
+      ${currentPage >= Math.ceil(productsGroup.length / ITEMS_PER_PAGE) - 1
+      ?carouselStyles.hidden
+      : carouselStyles.carouselRightButton
+    }`}
+      onClick={handleNextPage}
+      >
+        <span className={carouselStyles.carouselArrowRight}><AiOutlineArrowLeft /></span>
       </button>
     </div>
   );

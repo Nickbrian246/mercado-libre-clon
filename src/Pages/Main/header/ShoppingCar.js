@@ -13,7 +13,6 @@ const ShoppingCar = ( ) => {
 
   const handleModalState = () => {
     setModalState(!modalState);
-    console.log(modalState,'spy modelae');
   }
 
 

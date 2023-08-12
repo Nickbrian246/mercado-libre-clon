@@ -4,7 +4,7 @@
   overflow: hidden; 
 }
 
-.carousel-container {
+.carouselContainer {
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
@@ -25,7 +25,7 @@
   font-size: 16px;
 }
 
-.carousel-LeftButton{
+.carouselLeftButton{
   cursor: pointer;
   border:none;
   display: flex;
@@ -39,11 +39,9 @@
   border-radius: 50%;
   background: white;
   box-shadow: -5px 7px 5px 0px rgba(0,0,0,0.32);
--webkit-box-shadow: -5px 7px 5px 0px rgba(0,0,0,0.32);
--moz-box-shadow: -5px 7px 5px 0px rgba(0,0,0,0.32);
-
 }
-.carousel-RightButton{
+
+.carouselRightButton{
   cursor: pointer;
   border:none;
   display: flex;
@@ -57,19 +55,17 @@
   border-radius: 50%;
   background: white;
   box-shadow: -5px 7px 5px 0px rgba(0,0,0,0.32);
--webkit-box-shadow: -5px 7px 5px 0px rgba(0,0,0,0.32);
--moz-box-shadow: -5px 7px 5px 0px rgba(0,0,0,0.32);
 }
 
 .hidden{
   opacity: 0;
 }
-.carouselArrow-right{
+.carouselArrowRight{
   transform: rotate(-180deg);
   font-size: 32px;
   color: #3483fa;
 }
-.carouselArrow-left
+.carouselArrowLeft
 {
   align-self: center;
   font-size: 32px;
