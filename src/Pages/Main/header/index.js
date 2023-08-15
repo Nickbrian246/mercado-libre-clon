@@ -12,6 +12,7 @@ import { MyShopping } from "./MyShopping";
 import { Favorites } from "./favorites/index";
 import { Bell } from "./bellNotifications";
 import { ShoppingCar } from "./ShoppingCar";
+import { AutoCompleteList } from "./autoCompleteList/AutoCompleteList";
 // import { CarouselSlider } from "../Corousel";
 
 const Header = () => {
@@ -33,6 +34,7 @@ const Header = () => {
     <Row align="middle" style={{width:'650px'}} >
     <Col span={10}>
       <Search/>
+      
     </Col>
     <Col >
       <HorizontalVar/>

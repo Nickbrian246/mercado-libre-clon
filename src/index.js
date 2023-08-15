@@ -18,7 +18,7 @@ import addCard from './Store/addCard';
 
 const store = configureStore({
   reducer:{
-    fakeDataInformation: mainInformationReducer,
+    fakeProductsGroup: mainInformationReducer,
     salesCommentsInformation: salesInformationReducer,
     BankCardsSlice: BankCardsSlice,
     productSelected: productSelected,

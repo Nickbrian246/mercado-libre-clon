@@ -19,14 +19,22 @@ import { Footer } from "./footer";
 //**Services*******************************************************************
 import {fetchGroupOfProducts} from './services'
  //******************************************************************
-//**Utils*******************************************************************
+//**Redux*******************************************************************
+import { setFakeProductsGroup } from "../../Store/mainReducer";
+import { useDispatch } from "react-redux";
+/******************************************************** */
 
 const MainPage = () => {
   const [productsGroup,  setProductsGroup] = useState([])
 
+  const dispatch = useDispatch()
+
   useEffect(()=> {
     fetchGroupOfProducts(15)
-    .then((res) => setProductsGroup(res))
+    .then((res) =>{ 
+      setProductsGroup(res)
+      dispatch(setFakeProductsGroup(res))
+    })
     .catch((err) => console.log(err))
   },[])
 

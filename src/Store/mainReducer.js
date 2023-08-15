@@ -11,10 +11,10 @@ export const mainSlice = createSlice ({
   name:"mainSliceState",
   initialState,
   reducers:{
-    setFakeDataInformation:(state, action ) => {
+    setFakeProductsGroup:(state, action ) => {
       state.fakeInformation= action.payload;
     },
-    setFakeDataInformation2:(state, action ) => {
+    setFakeProductsGroup2:(state, action ) => {
       state.fakeInformation2= action.payload;
     },
   }
@@ -23,4 +23,4 @@ export const mainSlice = createSlice ({
 export default mainSlice.reducer;
 
 
-export const {setFakeDataInformation, setFakeDataInformation2,} = mainSlice.actions;
+export const {setFakeProductsGroup, setFakeProductsGroup2,} = mainSlice.actions;

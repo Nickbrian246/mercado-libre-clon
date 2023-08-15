@@ -18,7 +18,7 @@ import { Card3 } from './Card3';
 
 //Redux ****************************************************************
 import { useDispatch, useSelector } from "react-redux";
-import { setFakeDataInformation2 } from "../../../../Store/mainReducer";
+import { setFakeProductsGroup2 } from "../../../../Store/mainReducer";
 //*****************..****************************************************
 
 //**CSS****************************************************************** */
@@ -31,7 +31,7 @@ const CarouselComponent3 = () => {
 
   useEffect(() => {
     const card = generateManyBooks(15);
-    dispatch(setFakeDataInformation2(card))
+    dispatch(setFakeProductsGroup2(card))
   }, [])
 
   return (

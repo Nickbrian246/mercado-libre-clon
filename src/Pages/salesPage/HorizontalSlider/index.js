@@ -17,7 +17,7 @@ import {CardHorizontalSlider} from './CardHorizontalSlider';
 
 //Redux ****************************************************************
 import { useDispatch, useSelector} from "react-redux";
-import { setFakeDataInformation2 } from "../../../Store/mainReducer";
+import { setFakeProductsGroup2 } from "../../../Store/mainReducer";
 //*****************..**************************************************** 
 
 //CSS ****************************************************************
@@ -31,7 +31,7 @@ const HorizontalSlider = () => {
 
 useEffect(()=> {
   const card = generateManyBooks(15);
-  dispatch(setFakeDataInformation2(card))
+  dispatch(setFakeProductsGroup2(card))
 },[])
 
 

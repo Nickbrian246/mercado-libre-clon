@@ -1,0 +1,36 @@
+
+
+.container {
+    position: absolute;
+    z-index: 300;
+    width: 600px;
+    max-height: 400px;
+    overflow: hidden;
+    background: #ffff;
+}
+.productItemContainer{
+    display: flex;
+    min-height: 35px;
+    align-items: center;
+    justify-content:start;
+    width: 100%;
+    padding-left: 10px;
+    gap: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.productTitle{
+    font-size: 15px;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 0px  ;
+}
+.productItemIcon{
+    font-size: 18px;
+}
+
+.productItemContainer:hover{
+    background-color: rgb(34, 99, 239);
+    color: aliceblue;
+}
