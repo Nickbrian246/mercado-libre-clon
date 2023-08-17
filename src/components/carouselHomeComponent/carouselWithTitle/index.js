@@ -16,6 +16,7 @@ const CarouselComponentMain = (props)=> {
     subTitle,
     titleStyles,
     subTitleStyles,
+    isfor3slices,
   } = props
 
   return (
@@ -27,6 +28,7 @@ const CarouselComponentMain = (props)=> {
           </div>
           
             <CostumeCarousel
+            isfor3slices = {isfor3slices}
             productsGroup = {productsGroup}
           />
       </div>

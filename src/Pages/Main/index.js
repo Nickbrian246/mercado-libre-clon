@@ -60,7 +60,7 @@ const MainPage = () => {
     </Row>
 
     <Row style={{marginTop:'50px', }}  justify="center">
-    <Col style={{maxWidth:'1230px',height:'400px'}} >
+    <Col style={{maxWidth:'1230px',height:'500px'}} >
         {productsGroup.length > 0 && (
                 <CarouselComponent
                 groupOf15Products = {productsGroup}
@@ -74,7 +74,7 @@ const MainPage = () => {
     </Row>
 
     <Row style={{marginTop:'50px', }}  justify="center">
-      <Col style={{maxWidth:'1230px',height:'400px'}} >
+      <Col style={{maxWidth:'1230px',height:'500px'}} >
       {productsGroup.length > 0 && (
                 <CarouselComponent
                 groupOf15Products = {productsGroup}
@@ -89,7 +89,7 @@ const MainPage = () => {
     
 
     <Row style={{marginTop:'50px', }}  justify="center">
-      <Col style={{maxWidth:'1230px',height:'400px'}} >
+      <Col style={{maxWidth:'1230px',height:'500px'}} >
       {productsGroup.length > 0 && (
                 <CarouselComponent
                 groupOf15Products = {productsGroup}

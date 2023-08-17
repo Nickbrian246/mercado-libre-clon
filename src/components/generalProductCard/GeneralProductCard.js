@@ -14,7 +14,6 @@ import { setImageSelected } from "../../Store/imageSelected";
 import { useNavigate } from "react-router-dom";
 /*********************************************************************************** */
 import {HiLightningBolt}  from "react-icons/hi"
-import { Descriptions } from "antd";
 
 const GeneralProductCard = (props) => {
   const {
@@ -41,7 +40,7 @@ const GeneralProductCard = (props) => {
       images:image,
       id:_id,
     }))
-    navigate('/producto');
+    navigate(`/producto/${_id}`);
   }
   let offers = Math.random() * (1 - 0 ) + 0;
   let shortDescription = " "

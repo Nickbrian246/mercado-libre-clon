@@ -3,12 +3,12 @@ import  carouselStyles from './carousel.module.css';
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { GeneralProductCard } from '../generalProductCard/GeneralProductCard';
 
-const ITEMS_PER_PAGE = 5;
+
 
 const CostumeCarousel = (props) => {
-  const { productsGroup, isDiscount } = props;
+  const { productsGroup, isDiscount, isfor3slices } = props;
   const [currentPage, setCurrentPage] = useState(0);
-
+  const ITEMS_PER_PAGE = isfor3slices ? 3 : 5;
   const handlePrevPage = () => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 0));
   };
@@ -19,12 +19,20 @@ const CostumeCarousel = (props) => {
 
   const startIndex = currentPage * ITEMS_PER_PAGE;
   const visibleData = productsGroup.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  let hideNextBtn = isfor3slices ? currentPage >= Math.ceil(productsGroup.length / ITEMS_PER_PAGE) -5 : currentPage >= Math.ceil(productsGroup.length / ITEMS_PER_PAGE) - 1
 
-  const translateValue = `translateX(-${currentPage * (100 / ITEMS_PER_PAGE)}%)`;
-
+  const translateValue = isfor3slices ? `translateX(-${currentPage * (100 / 8)}%)` :`translateX(-${currentPage * (100 / ITEMS_PER_PAGE)}%)`
   return (
-    <div className={carouselStyles.carousel}>
-      <div className={carouselStyles.carouselContainer} style={{ transform: translateValue }}>
+    <div className={ isfor3slices ? carouselStyles.carousel3Slices :carouselStyles.carousel}>
+      <div className={
+        isfor3slices
+        ? carouselStyles.carouselContainerFor3Slices
+        :carouselStyles.carouselContainer
+        } 
+        style={{
+          transform: translateValue
+          }}
+        >
         {productsGroup.map((item) => (
           <GeneralProductCard
             key={item.id}
@@ -49,8 +57,8 @@ const CostumeCarousel = (props) => {
       </button>
       <button
       className={`
-      ${currentPage >= Math.ceil(productsGroup.length / ITEMS_PER_PAGE) - 1
-      ?carouselStyles.hidden
+      ${hideNextBtn
+      ? carouselStyles.hidden
       : carouselStyles.carouselRightButton
     }`}
       onClick={handleNextPage}

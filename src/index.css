@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   --linkColor:#3483fa;
   --textInformationColor:#737373;
+  --shadowText:rgba(92, 209, 29, 0.765);
 }
 
 code {

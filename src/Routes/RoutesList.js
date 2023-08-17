@@ -13,11 +13,11 @@ const routeList = [
   element: <MainPage path= '/'/>
 },
 {
-  path:'/producto',
+  path:'/producto/:productId',
   title:'producto detalles',
   description: 'detalles del producto',
   status: true,
-  element: <SalesPage path= '/producto'/>
+  element: <SalesPage path= '/producto/:productId'/>
 },
 {
   path:'/payPage',

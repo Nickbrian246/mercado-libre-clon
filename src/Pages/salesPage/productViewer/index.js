@@ -6,11 +6,12 @@ import { Col,Row } from "antd/lib/grid";
 //*Components ************************************************* */
 import { VerticalProductViewer } from "./verticalProductVierwe";
 //* ************************************************************** */
-import { useSelector } from "react-redux";
+//***Services************************************************************* */
+import { fetchProductWithId } from "../../../services";
+//********************************************************************** */
 
-const ProductViewer = () => {
-  const {images,id} = useSelector((state) => state.imageSelected.imageSelected);
-
+const ProductViewer = (props) => {
+  const {images} = props;
   return (
     <>
     <Row style={{width:'802px', height:'fit-content', overflow:'hidden'}}>

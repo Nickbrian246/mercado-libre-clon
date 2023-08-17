@@ -1,5 +1,4 @@
 import React from "react";
-
 import {IoIosArrowUp} from 'react-icons/io';
 const Stock = ( ) => {
 const randomDisponibility= Math.floor(Math.random() * 100);
@@ -11,18 +10,18 @@ const randomDisponibility= Math.floor(Math.random() * 100);
         Stock disponible
       </p>
 
-      <div className="text-container">
+      <div className="StockText-container">
       <p>
         cantidad:
       </p>
 
       <p>
-        1 cantidad
+        1 Unidad
       </p>
         <span className="icon-container-stock">
           <IoIosArrowUp />
         </span>
-      <p>{`(${randomDisponibility} disponibles)`}</p>
+      <p className="stockContainer-availability">{`(${randomDisponibility} disponibles)`}</p>
       </div>
     </div>
     </>

@@ -12,7 +12,7 @@ import Glider from 'react-glider';
 
 // components***********************************************************
 import {CardHorizontalSlider} from './CardHorizontalSlider';
-
+import { CarouselComponentMain } from "../../../components/carouselHomeComponent/carouselWithTitle";
 //**********************************************************************
 
 //Redux ****************************************************************
@@ -24,17 +24,18 @@ import { setFakeProductsGroup2 } from "../../../Store/mainReducer";
 import './indexHorizontalSlider.css';
 //CSS ****************************************************************
 
-const HorizontalSlider = () => {
-  const dispatch = useDispatch()
-  const dataForCard = useSelector((state) => state.fakeDataInformation.fakeInformation2)
+const HorizontalSlider = (props) => {
+  const {groupOfProducts} = props
+  // const dispatch = useDispatch()
+  // const dataForCard = useSelector((state) => state.fakeDataInformation.fakeInformation2)
   
 
-useEffect(()=> {
-  const card = generateManyBooks(15);
-  dispatch(setFakeProductsGroup2(card))
-},[])
+// useEffect(()=> {
+//   const card = generateManyBooks(15);
+//   dispatch(setFakeProductsGroup2(card))
+// },[])
 
-
+console.log(groupOfProducts,'soy el conjunto de proudctos ')
 
   return (
     <> 
@@ -43,16 +44,17 @@ useEffect(()=> {
         <h2 style={{display:'inline-block', marginRight:'50px'}}>Publicaciones del vendedor</h2>
       </div>
     <div className="glider-container-HorizontalSlider">
-      <Glider
-              hasArrows={true}
-              slidesToShow={3}
-              slidesToScroll={3}
-        > 
-              {dataForCard.map((slide) => (
-                <CardHorizontalSlider slide={slide} key={slide._id} />
-              ))}
-
-      </Glider> 
+      <CarouselComponentMain 
+      productsGroup = {groupOfProducts}
+      title = "Quienes vieron este producto también compraron"
+      isfor3slices = {true}
+      titleStyles = {{
+        fontSize:'24px',
+        color:"rgba(0,0,0,.9)",
+        fontWeight:'400',
+        lineHeight:"1.25",
+      }}
+      />
 
     </div>
 

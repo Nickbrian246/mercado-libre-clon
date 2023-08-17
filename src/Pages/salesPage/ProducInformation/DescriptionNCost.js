@@ -14,12 +14,13 @@ import { Rate } from 'antd';
 import  {useSelector} from 'react-redux'
 //*****************************************************//
 
-const DescriptionNCost = () => {
-  const {
-    name,
-    price,
-    status,
-  } = useSelector((state)=> state.productSelected.productSelected);
+const DescriptionNCost = (props) => {
+  const {title, price,status} = props
+  // const {
+  //   name,
+  //   price,
+  //   status,
+  // } = useSelector((state)=> state.productSelected.productSelected);
 
 const randomSales = Math.floor(Math.random() *1000);
 const priceMonthlyCalculus = (price / 3);
@@ -33,7 +34,7 @@ console.log(value, 'soy valor de ratio, en folder de prodcutInformation, descrip
     <>
     <p className="description-salesInfo">Nuevo | {`${randomSales}`} vendidios </p>
     <div className="description-information-container">
-      <p>{`${name}`}</p>
+      <p>{`${title}`}</p>
     </div>
     <div className="description-text-container">
       <p>{`$${price}`}</p>

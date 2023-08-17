@@ -3,15 +3,33 @@
   margin: 0 auto;
   overflow: hidden; 
 }
-
+.carousel3Slices {
+  max-width: 740px  ;
+  margin: 0 auto;
+  overflow: hidden; 
+}
+/* 740px */
 .carouselContainer {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   overflow: hidden;
   gap: 23px;
   position: relative;
+  will-change: transform;
   transition: transform 0.3s ease; 
   width: calc(100% * 5); 
+}
+.carouselContainerFor3Slices {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+  gap: 23px;
+  position: relative;
+  will-change: transform;
+  transition: transform 0.3s ease; 
+  width: calc(100% *8); 
 }
 
 .carousel-item {
