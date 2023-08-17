@@ -32,35 +32,35 @@ const CardAllQuestionsRank= (props ) => {
 
       <div className={cardPositivesStyles.iconContainer}>
 
-<div style={{width:'50px', display:"flex"}}>
-<AiOutlineDislike 
-onClick={()=> {handleLikeButton()}}
-className={`
-${likeButton ?  cardPositivesStyles.iconActive: cardPositivesStyles.iconNormal }`}
-/> 
-<p
-className={cardPositivesStyles.Counter}>
-  {likeButton ? '1': '0'}
-</p>
-</div>
+        <div style={{width:'50px', display:"flex"}}>
+        <AiOutlineDislike 
+        onClick={()=> {handleLikeButton()}}
+        className={`
+        ${likeButton ?  cardPositivesStyles.iconActive: cardPositivesStyles.iconNormal }`}
+        /> 
+        <p
+        className={cardPositivesStyles.Counter}>
+          {likeButton ? '1': '0'}
+        </p>
+        </div>
 
-<div 
-style={{
-  width:'50px',
-  display:"flex",
-  }}>
-< BiLike
-onClick={()=> {handleDisLikeButton()}}
-className={` 
-${disLikeButton ? cardPositivesStyles.iconActive : cardPositivesStyles.iconNormalDislike}`}
-/> 
-<p
-className="counter">
-  {disLikeButton ? '1': '0'}
-</p>
-</div>
+        <div 
+        style={{
+          width:'50px',
+          display:"flex",
+          }}>
+        < BiLike
+        onClick={()=> {handleDisLikeButton()}}
+        className={` 
+        ${disLikeButton ? cardPositivesStyles.iconActive : cardPositivesStyles.iconNormalDislike}`}
+        /> 
+        <p
+        className="counter">
+          {disLikeButton ? '1': '0'}
+        </p>
+        </div>
 
-</div>
+        </div>
 
     </div>
     
