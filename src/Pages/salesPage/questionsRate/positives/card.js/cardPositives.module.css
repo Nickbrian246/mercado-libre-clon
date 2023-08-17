@@ -1,7 +1,6 @@
-.cardQuestions-container{
-  width: 100%;
-  max-height:200px;
-  display: inline;
+.cardQuestionsContainer{
+  width: 718px;
+  max-height:635px;
 
 }
 .title{
@@ -15,29 +14,30 @@
   
 }
 
-.text-title{
+.textTitle{
   font-size: 16px;
   margin-left: 10px
 }
-.icon-container{
+.iconContainer{
   display: flex;
   align-content: center;
+  justify-content: flex-start;
 }
 
-.icon-container .counter{
+.Counter{
   margin-left: 3px;
   margin-top: -3px;
   
 }
-.icon-active{
+.iconActive{
   color: red;
 }
-.icon-normalDislike{
+.iconNormalDislike{
   margin-top: 1px;
   padding: 0px;
   font-size: 16px;
 }
-.icon-normal{
+.iconNormal{
   margin: 0px;
   padding: 0px;
   font-size: 16px;

@@ -45,7 +45,6 @@ if (e.key==='Enter' && InputValue !== '') {
   handleSendQuestion();
 }
 }
-console.log(ObjectArray,'soy el objeto');
 
 
 

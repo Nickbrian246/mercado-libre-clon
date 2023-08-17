@@ -2,34 +2,27 @@ import React, { useState } from "react";
 import { Rate } from 'antd';
 
 import {AiOutlineLike,AiOutlineDislike} from 'react-icons/ai';
+import {BiLike} from 'react-icons/bi'
 
-import './cardNegatives.css';
+import cardPositivesStyles from './cardNegatives.module.css';
 const CardNegativesQuestionsRank= (props) => {
   const {Comment,rateStarts,status} = props.data;
   const [likeButton, setLikeButton] = useState(false);
   const [disLikeButton, setDislikeButton] = useState(false);
 
-  
-
   const handleLikeButton= () => {
     setLikeButton(!likeButton);
     setDislikeButton(false)
-    
-
   }
+
   const handleDisLikeButton= () => {
     setDislikeButton(!disLikeButton);
     setLikeButton(false)
-  
-
   }
-
-
-
 
   return(
     <>
-    <div className="cardQuestions-container">
+    <div className={cardPositivesStyles.cardQuestionsContainer}>
       <div >
         <Rate defaultValue={rateStarts}/>
       </div>
@@ -38,16 +31,17 @@ const CardNegativesQuestionsRank= (props) => {
         <p className="text-title">{`${Comment}`}</p>
       </div>
 
-      <div className="icon-container">
+
+      <div className={cardPositivesStyles.iconContainer}>
 
       <div style={{width:'50px', display:"flex"}}>
-      <AiOutlineLike 
+      <AiOutlineDislike 
       onClick={()=> {handleLikeButton()}}
-      className={`icon-normal
-      ${likeButton ?  'icon-active': 'icon-normal' }`}
+      className={`
+      ${likeButton ?  cardPositivesStyles.iconActive: cardPositivesStyles.iconNormal }`}
       /> 
       <p
-      className="counter">
+      className={cardPositivesStyles.Counter}>
         {likeButton ? '1': '0'}
       </p>
       </div>
@@ -57,10 +51,10 @@ const CardNegativesQuestionsRank= (props) => {
         width:'50px',
         display:"flex",
         }}>
-      < AiOutlineDislike
+      < BiLike
       onClick={()=> {handleDisLikeButton()}}
-      className={`icon-normalDislike 
-      ${disLikeButton ? 'icon-active': 'icon-normalDislike' }`}
+      className={` 
+      ${disLikeButton ? cardPositivesStyles.iconActive : cardPositivesStyles.iconNormalDislike}`}
       /> 
       <p
       className="counter">
@@ -69,7 +63,6 @@ const CardNegativesQuestionsRank= (props) => {
       </div>
 
       </div>
-
     </div>
     
     

@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { Rate } from 'antd';
 
-import {
-  AiOutlineLike,
-  AiOutlineDislike,
-} from 'react-icons/ai';
+import {AiOutlineDislike  } from 'react-icons/ai';
+import {BiLike} from 'react-icons/bi'
 
-import './cardStyles.css';
+import cardPositivesStyles from './cardStyles.module.css';
 const CardAllQuestionsRank= (props ) => {
   const {Comment,rateStarts,status} = props.data;
   const [likeButton, setLikeButton] = useState(false);
@@ -23,7 +21,7 @@ const CardAllQuestionsRank= (props ) => {
 
   return(
     <>
-    <div className="cardQuestions-container">
+    <div className={cardPositivesStyles.cardQuestionsContainer}>
       <div >
         <Rate defaultValue={rateStarts}/>
       </div>
@@ -32,37 +30,37 @@ const CardAllQuestionsRank= (props ) => {
         <p className="text-title">{`${Comment}`}</p>
       </div>
 
-      <div className="icon-container">
+      <div className={cardPositivesStyles.iconContainer}>
 
-      <div style={{width:'50px', display:"flex"}}>
-      <AiOutlineLike 
-      onClick={()=> {handleLikeButton()}}
-      className={`icon-normal
-      ${likeButton ?  'icon-active': 'icon-normal' }`}
-      /> 
-      <p
-      className="counter">
-        {likeButton ? '1': '0'}
-      </p>
-      </div>
+<div style={{width:'50px', display:"flex"}}>
+<AiOutlineDislike 
+onClick={()=> {handleLikeButton()}}
+className={`
+${likeButton ?  cardPositivesStyles.iconActive: cardPositivesStyles.iconNormal }`}
+/> 
+<p
+className={cardPositivesStyles.Counter}>
+  {likeButton ? '1': '0'}
+</p>
+</div>
 
-      <div 
-      style={{
-        width:'50px',
-        display:"flex",
-        }}>
-      < AiOutlineDislike
-      onClick={()=> {handleDisLikeButton()}}
-      className={`icon-normalDislike 
-      ${disLikeButton ? 'icon-active': 'icon-normalDislike' }`}
-      /> 
-      <p
-      className="counter">
-        {disLikeButton ? '1': '0'}
-      </p>
-      </div>
+<div 
+style={{
+  width:'50px',
+  display:"flex",
+  }}>
+< BiLike
+onClick={()=> {handleDisLikeButton()}}
+className={` 
+${disLikeButton ? cardPositivesStyles.iconActive : cardPositivesStyles.iconNormalDislike}`}
+/> 
+<p
+className="counter">
+  {disLikeButton ? '1': '0'}
+</p>
+</div>
 
-      </div>
+</div>
 
     </div>
     
