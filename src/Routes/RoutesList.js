@@ -20,14 +20,14 @@ const routeList = [
   element: <SalesPage path= '/producto/:productId'/>
 },
 {
-  path:'/payPage',
+  path:'/payPage/:productId',
   title:'pagina de pago',
   description: 'details about the pay',
   status: false,
   element: <PayPage path= '/payPage'/>
 }, 
 {
-  path:'/checkAndConfirm',
+  path:'/checkAndConfirm/:productId',
   title:'pagina de rivision de la compra',
   description: 'details about send and price check',
   status: false,

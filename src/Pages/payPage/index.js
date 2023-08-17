@@ -10,22 +10,40 @@ import { Row, Col, Button } from "antd";
 import { HeaderPayPage } from "./HeaderPayPage";
 import { BankCards } from "./backCards";
 import { ProductInformation } from "./productInformation";
-import { BankotherCards } from "./backCards/card/cardOtherPaymentWays";
 //******************************************************************** */
 
 // React Router ¨****************************************************//
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+//******************************************************************* */
+
+// Utils ¨****************************************************//
+import { fetchProductWithId } from "../../services";
 //******************************************************************* */
 
 
 
 const PayPage = () => {
   const [isCardSelected, setIsCardSelected] = useState(false);
+  const [productSelected, setProductSelected] = useState({})
+  const {productId} = useParams()
+  useEffect(()=>{
+    if(productId){
+      fetchProductWithId(productId)
+      .then(res => setProductSelected(res) )
+      .catch((err) => {console.log(err);})
+    }
+  },[])
 
+  const {
+    image,
+    title,
+    id,
+    description, 
+    price
+  } = productSelected
+let status = Math.random() > 0.5
 
-
-
-  const navigate = useNavigate();
   return (
     <>
       <Row style={{ height: '80px', background: '#fff159', }} justify='center' align="middle">
@@ -71,7 +89,7 @@ const PayPage = () => {
                   borderRadius: '100%',
                   margin: '0px',
                 }}
-                src="https://http2.mlstatic.com/resources/frontend/landings-mp/images/mercadopago-og.jpg"
+                src="https://pbs.twimg.com/profile_images/1609933607006519297/JfQLdV9q_400x400.jpg"
                 alt=" logo paymente mercado pago"
               />
             </div>
@@ -92,9 +110,8 @@ const PayPage = () => {
                 type="primary"
                 size="large"
                 style={{ marginRight: '48px',}}
-                onClick={() => { navigate('/checkAndConfirm') }}
               >
-                Continuar
+                <Link to={`/checkAndConfirm/${id}`}>Continuar</Link>
             </Button> 
               :
             <Button
@@ -103,9 +120,9 @@ const PayPage = () => {
               disabled
               size="large"
               style={{ marginRight: '48px' }}
-              onClick={() => { navigate('/checkAndConfirm') }}
+              
             >
-              Continuar
+            <Link to={`/checkAndConfirm/${id}`}>Continuar</Link>
             </Button> }
 
             </div>
@@ -120,7 +137,12 @@ const PayPage = () => {
           marginTop: '-278px',
         }}>
           <Col>
-            <ProductInformation />
+            <ProductInformation
+            image = {image}
+            price = {price}
+            title = {title}
+            status = {status}
+            />
           </Col>
 
         </Row>

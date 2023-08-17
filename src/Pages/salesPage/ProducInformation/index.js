@@ -9,7 +9,7 @@ import { ProtectedBought } from "./Protectedbought";
 //****************************************************** */
 
 const ProductInformationCard = (props)=> {
-const {title, price} = props
+const {title, price, id} = props
     let status = Math.random() > 0.5
 
   return(
@@ -27,7 +27,9 @@ const {title, price} = props
       status = {status}/>
       <DeliverTime />
       <Stock/>
-      <BuyNAddButtons/>
+      <BuyNAddButtons
+      id = {id}
+      />
       <ProtectedBought/>
     </div>
     </>

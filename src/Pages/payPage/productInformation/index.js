@@ -17,20 +17,21 @@ import { useSelector } from "react-redux";
 
 
 
-const ProductInformation= () => {
+const ProductInformation = (props) => {
+  
   const {
     image,
     price,
-    name,
+    title,
     status,
-  }= useSelector((state)=> state.productSelected.productSelected);
+  }= props
 
   return (
     <>
     <div  className="productInformation-container">
       <div className="productImageAndInformation-container">
         <img className="productImageAndInformation-Image" src={`${image}`} alt="imagen del producto"/>
-        <p className="productName">{`${name}`}</p>
+        <p className="productName">{`${title}`}</p>
         <p className="productName"  >cantidad: 1</p>
 
 

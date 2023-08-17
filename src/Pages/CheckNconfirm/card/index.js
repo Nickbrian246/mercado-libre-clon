@@ -7,19 +7,14 @@ import {GrDeliver} from 'react-icons/gr';
 
 import { useSelector } from "react-redux";
 
-const CardCheckNConfirm = () => {
+const CardCheckNConfirm = (props) => {
+  const {price} = props
   const {
   accountNumber,
   description,
   src,
   _id,
-
   } = useSelector((state) => state.cardSelected.cardSelected);
-
-  const {
-    price,
-  } = useSelector((state) => state.productSelected.productSelected);
-
   return (
     <>
     <p style={{fontSize:'26px', fontWeight:'bold'}}>Revisa y confirma tu compra</p>

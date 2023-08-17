@@ -3,34 +3,30 @@ import React from "react";
 import { Button } from "antd";
 /* ******************************************************************** */
 /*REACT ROUTER******************************************************* */
-import { useNavigate} from 'react-router-dom'
+import { Link} from 'react-router-dom'
 /* ******************************************************************** */
 import { setAddCard } from "../../../Store/addCard";
 import { useSelector, useDispatch } from "react-redux";
 
 
-const BuyNAddButtons = () => {
+const BuyNAddButtons = (props) => {
+  const {id} = props
   const disptach= useDispatch()
-  const {
-    price,
-    image,
-    name,
-    _id,
-    description,
-  } = useSelector((state)=> state.productSelected.productSelected)
-  const navigate = useNavigate();
+  // const {
+  //   price,
+  //   image,
+  //   name,
+  //   _id,
+  //   description,
+  // } = useSelector((state)=> state.productSelected.productSelected)
+  // const navigate = useNavigate();
 
-  const handleBuyButton =  ()=> {
-    navigate('/payPage');  
-  }
+  // const handleBuyButton =  ()=> {
+  //   navigate('/payPage');  
+  // }
   const handleAddCardBtn=()=> {
     disptach((setAddCard({
-      price,
-      name,
-      image,
-      _id,
-      description,
-
+      id
     })))
   }
 
@@ -41,9 +37,8 @@ const BuyNAddButtons = () => {
     className="btn-generic"
     type="primary"
     size="large" 
-    onClick={()=> {handleBuyButton()}}
     >
-      Comprar ahora
+    <Link   to={`/payPage/${id}`}>Comprar ahora</Link> 
     </Button>
     <Button
     className="btn-generic"

@@ -20,16 +20,11 @@ import { ModalConfirmBuy } from "../../../modal/modalConfirmBuy/ModalConfirmBuy"
 
 
 
-const ProductInformationCheckNConfirm= () => {
+const ProductInformationCheckNConfirm= (props) => {
+  const {image, price, title, status} = props
   const[ modal, setModal ] = useState(false);
   const navigate = useNavigate();
   console.log(modal,'soy modal');
-  const {
-    image,
-    price,
-    name,
-    status,
-  }= useSelector((state)=> state.productSelected.productSelected);
 
   // const hanldeClick = () => {
   //   navigate('/');
@@ -44,7 +39,7 @@ const ProductInformationCheckNConfirm= () => {
     <div  className="productInformation-container">
       <div className="productImageAndInformation-container">
         <img className="productImageAndInformation-Image" src={`${image}`} alt="imagen del producto"/>
-        <p className="productName">{`${name}`}</p>
+        <p className="productName">{`${title}`}</p>
         <p className="productName"  >cantidad: 1</p>
 
 

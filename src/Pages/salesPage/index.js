@@ -50,7 +50,7 @@ useEffect(()=>{
     .catch((err) => console.log(err))
   },[])
 
-  const {image,title,price} = productSelected
+  const {image,title,price, id} = productSelected
   return (
     <>
     <Row style={{height:'100px',background:'#fff159', }} justify='center'>
@@ -122,6 +122,7 @@ useEffect(()=>{
             <ProductInformationCard
             title = {title}
             price = {price}
+            id = {id}
             />
             </Col>
           </Row>
