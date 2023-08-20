@@ -20,13 +20,18 @@ const CheckAndConfirm = () => {
   const {
     title,
     price,
-    image
+    image,
+    id
   } = productSelected
 
   let status = Math.random() > 0.5
   return (
     <>
-  <Row  style={{height:'80px',background:'#fff159', }} justify='center' align="middle">
+  <Row  
+  style={{height:'80px',background:'#fff159'}}
+  justify='center'
+  align="middle"
+  >
     <Col style={{width:'800px'}}>
     <HeaderPayPage/>
     </Col>
@@ -49,6 +54,7 @@ const CheckAndConfirm = () => {
     image = {image}
     price = {price}
     title = {title}
+    id = {id}
     status = {status}
     />
   </Col>

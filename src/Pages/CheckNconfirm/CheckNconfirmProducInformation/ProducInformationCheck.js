@@ -20,8 +20,8 @@ import { ModalConfirmBuy } from "../../../modal/modalConfirmBuy/ModalConfirmBuy"
 
 
 
-const ProductInformationCheckNConfirm= (props) => {
-  const {image, price, title, status} = props
+const ProductInformationCheckNConfirm = (props) => {
+  const {image, price, title, status, id} = props
   const[ modal, setModal ] = useState(false);
   const navigate = useNavigate();
   console.log(modal,'soy modal');
@@ -70,7 +70,9 @@ const ProductInformationCheckNConfirm= (props) => {
     {modal === true && (
         <ModalConfirmBuy
         title = {title}
-        image = {image}/>
+        image = {image}
+        id = {id}
+        />
       )}
     
     </>

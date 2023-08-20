@@ -1,0 +1,29 @@
+.cardsContainer{
+    display: flex;
+    margin-top: 20px;
+    padding: 20px;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
+}
+.container{
+    width: 600px;
+    padding: 10px;
+    border: 1px solid #bababa;
+    border-radius: 5px;
+}
+.container > p{
+    font-size: 24px;
+    font-weight: 500;
+
+}
+.title{
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.spanInformation{
+    font-size: 16px;
+    font-weight: 450;
+    text-transform: lowercase;
+}

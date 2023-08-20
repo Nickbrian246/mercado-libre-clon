@@ -2,13 +2,15 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineCheck } from "react-icons/ai";
 import modalStyles from './modalConfirmBuy.module.css';
+import { useNavigate } from "react-router-dom";
 
 const ModalConfirmBuy = (props) => {
   const [animation, setAnimation] = useState(false);
   const [almostText, setAlmost] = useState(false);
   const [isAnimationFinish, setIsAnimationFinish] = useState(false);
+  const navigate = useNavigate()
 
-  const { title, image } = props;
+  const { title, image , id} = props;
   useEffect(() => {
     setTimeout(() => {
       setAnimation(true);
@@ -25,6 +27,11 @@ const ModalConfirmBuy = (props) => {
 
     return () => clearTimeout(animationTimeout);
   }, [animation]);
+  if(isAnimationFinish) {
+    setTimeout(()=>{
+      navigate(`/productDetails/${id}`)
+    },1000)
+  }
 
   return (
     <>

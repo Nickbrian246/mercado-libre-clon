@@ -2,6 +2,7 @@ import { SalesPage } from "../Pages/salesPage";
 import { MainPage } from "../Pages/Main";
 import { PayPage } from "../Pages/payPage";
 import { CheckAndConfirm } from "../Pages/CheckNconfirm";
+import { ProductBought } from "../Pages/productBought";
 
 
 const routeList = [
@@ -32,6 +33,13 @@ const routeList = [
   description: 'details about send and price check',
   status: false,
   element: <CheckAndConfirm path= '/checkAndConfirm'/>
+}, 
+{
+  path:'/productDetails/:productId',
+  title:'pagina de rivision de la compra',
+  description: 'details about send and price check',
+  status: false,
+  element: <ProductBought path= '/productDetails'/>
 }, 
 ];
 
