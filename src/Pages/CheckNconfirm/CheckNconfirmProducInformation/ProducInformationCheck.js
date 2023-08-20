@@ -68,7 +68,9 @@ const ProductInformationCheckNConfirm= (props) => {
 
     </div>
     {modal === true && (
-        <ModalConfirmBuy/>
+        <ModalConfirmBuy
+        title = {title}
+        image = {image}/>
       )}
     
     </>
