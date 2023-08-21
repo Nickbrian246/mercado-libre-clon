@@ -1,4 +1,5 @@
-.container{
+.container,
+.containerSelected {
     width: 100%;
     height: 50px;
     display: flex !important;
@@ -6,33 +7,38 @@
     gap: 5px;
     align-items: center;
     cursor: pointer;
+    position: relative;
 }
-.container::before{
+
+.containerSelected::before {
     border-left: 0.1em solid #3483fa;
     border-radius: 1.5px;
-    bottom: 2px;
     content: "";
-    top: 12px;
-    left: 2px;
     position: absolute;
     height: 30px;
     font-size: 18px;
     font-weight: 400;
     line-height: 1;
     margin: 0;
-
+    bottom: auto;
+    top: 50%; /* Position it in the middle vertically */
+    transform: translateY(-50%); /* Center vertically */
+    left: 2px;
+    display: block; /* Show the ::before only for .containerSelected */
 }
-.unitSelected{
+
+.unitSelected {
     font-size: 16px !important;
     font-weight: 600 !important;
     color: #222324 !important;
 }
-.unit{
+
+.unit {
     font-size: 16px !important;
     font-weight: 600 !important;
     color: #3483fa !important;
 }
 
-.container:hover{
-    background-color: rgba(0,0,0,.04);
+.container:hover {
+    background-color: rgba(0, 0, 0, .04);
 }

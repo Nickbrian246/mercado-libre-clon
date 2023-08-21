@@ -1,5 +1,8 @@
 import  styles from "./selectQuantitu.module.css"
+import { useDispatch } from "react-redux";
+import { setHowManyProducts } from "../../../../Store/howManyProducts";
 const SelectQuantityCard = (props) => {
+    const dispatch = useDispatch()
     const {
         title,
         unit,
@@ -8,7 +11,8 @@ const SelectQuantityCard = (props) => {
         id,
         position, 
         setPosition,
-        setQuantity
+        setQuantity,
+        handleOpenModalToSelectQuantity
     } = props
     let IsSelected = position === id;
     let textActiveStyles =  styles.unitSelected;
@@ -16,10 +20,18 @@ const SelectQuantityCard = (props) => {
     const handleClick = (id) =>{
         setPosition(id)
         setQuantity(`${unit} ${title}`)
+        handleOpenModalToSelectQuantity()
+        dispatch(setHowManyProducts(unit))
     }
     return (
         <>
-        <li className={styles.container} onClick={() => {handleClick(id)}}>
+        <li className={
+            IsSelected 
+            ? styles.containerSelected
+            :styles.container
+            }
+            onClick={() => {handleClick(id)}}
+        >
             <p className={IsSelected ?  textNormalStyles: textActiveStyles}>{unit}</p>
             <p className={IsSelected ? textNormalStyles: textActiveStyles}>{title}</p>
 

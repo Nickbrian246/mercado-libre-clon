@@ -8,6 +8,7 @@ import {GrDeliver} from 'react-icons/gr';
 import { useSelector } from "react-redux";
 
 const CardCheckNConfirm = (props) => {
+  const {products} = useSelector((state) => state.howManyProducts)
   const {price} = props
   const {
   accountNumber,
@@ -30,8 +31,8 @@ const CardCheckNConfirm = (props) => {
 
             <MdLocationPin className="icon" />
             <div className="text-container">
-              <p>C.P 86203</p>
-              <p>calle guadalupe victoria </p>
+              <p>C.P 5469</p>
+              <p>calle random </p>
             </div>
 
 
@@ -86,7 +87,7 @@ const CardCheckNConfirm = (props) => {
             }} /> 
             <div className="text-container">
               <p>{description} credito ****{accountNumber}</p>
-              <p>pagas ${price} </p>
+              <p>pagas ${price *products} </p>
             </div>
 
 

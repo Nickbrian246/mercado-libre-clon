@@ -10,10 +10,7 @@ export const addCard = createSlice ({
   initialState,
   reducers:{
     setAddCard:(state, action ) => {
-      
-
       state.addCard= [...state.addCard, action.payload];
-    
     },
   }
 });

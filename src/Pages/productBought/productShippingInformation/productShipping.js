@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 const ProductShippingInfo = (props) => {
     const {accountNumber, description} = useSelector((state) => state.cardSelected.cardSelected)
+    const {products} = useSelector((state) => state.howManyProducts)
     const {title, price, productDescription, id} = props
 
     let currentDate = getCurrentDateInDDMMYYYY()
@@ -29,7 +30,8 @@ const ProductShippingInfo = (props) => {
                     <p className={styles.title}> {` Descripción: `}<span className={styles.spanInformation}>{`${productDescription}`}</span></p>
                     <p className={styles.title}>{`precio: `}<span className={styles.spanInformation}>{`$${price}`}</span> </p>
                     <p className={styles.title}>{`metodo de pago seleccionado: `}<span className={styles.spanInformation}>{`${description ? description: "hooo lo sentimos no pudimos recuperar el metodo de pago seleccionado :(" }`}</span> </p>
-                    <p className={styles.title}>{`total: `}<span className={styles.spanInformation}>{`${price}`}</span> </p>
+                    <p className={styles.title}>{`cantidad: `}<span className={styles.spanInformation}>{products }</span> </p>
+                    <p className={styles.title}>{`total: `}<span className={styles.spanInformation}>{`${price*products}`}</span> </p>
                 </div>
             </div>
             <div className={styles.navkeepBying}>

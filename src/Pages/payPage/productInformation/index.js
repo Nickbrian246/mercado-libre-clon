@@ -18,6 +18,7 @@ import { useSelector } from "react-redux";
 
 
 const ProductInformation = (props) => {
+  const {products} = useSelector((state) => state.howManyProducts)
   
   const {
     image,
@@ -32,7 +33,7 @@ const ProductInformation = (props) => {
       <div className="productImageAndInformation-container">
         <img className="productImageAndInformation-Image" src={`${image}`} alt="imagen del producto"/>
         <p className="productName">{`${title}`}</p>
-        <p className="productName"  >cantidad: 1</p>
+        <p className="productName"  >cantidad: {products }</p>
 
 
       </div>
@@ -48,7 +49,7 @@ const ProductInformation = (props) => {
       </div>
       <div className="price-container">
         <p>Pagas</p>
-        <p>{`$${price}`}</p>
+        <p>{`$${price * products}`}</p>
       </div>
 
       {status === true  &&(

@@ -21,6 +21,7 @@ import { ModalConfirmBuy } from "../../../modal/modalConfirmBuy/ModalConfirmBuy"
 
 
 const ProductInformationCheckNConfirm = (props) => {
+  const {products} = useSelector((state) => state.howManyProducts)
   const {image, price, title, status, id} = props
   const[ modal, setModal ] = useState(false);
   const navigate = useNavigate();
@@ -40,13 +41,13 @@ const ProductInformationCheckNConfirm = (props) => {
       <div className="productImageAndInformation-container">
         <img className="productImageAndInformation-Image" src={`${image}`} alt="imagen del producto"/>
         <p className="productName">{`${title}`}</p>
-        <p className="productName"  >cantidad: 1</p>
+        <p className="productName"  >cantidad: {products}</p>
 
 
       </div>
       <div className="productPrice-container">
           <div>
-          <p className="productName" >Producto</p>
+          <p className="productName" >Precio</p>
           {status === true &&( <p className="productName">envio</p>)}
           </div>
           <div>
@@ -56,7 +57,7 @@ const ProductInformationCheckNConfirm = (props) => {
       </div>
       <div className="price-container">
         <p>Pagas</p>
-        <p>{`$${price}`}</p>
+        <p>{`$${price*products}`}</p>
       </div>
 
       <div style={{marginTop:'20px', marginLeft:'90px'}}>
