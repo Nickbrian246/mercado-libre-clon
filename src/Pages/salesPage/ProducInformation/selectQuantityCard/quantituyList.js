@@ -1,0 +1,33 @@
+const quantityList = [
+    {
+        title:'unidad',
+        unit:1,
+        id:'sadfdafadsfd'
+    },
+    {
+        title:'unidades',
+        unit:2,
+        id:'sadfdafadsfd3432432'
+    },
+    {
+        title:'unidades',
+        unit:3,
+        id:'sadfdafadsfd324',
+    },
+    {
+        title:'unidades',
+        unit:4,
+        id:'sadfdafadsfddsfdf'
+    },
+    {
+        title:'unidades',
+        unit:5,
+        id:'sadfdafadsfdgrgr'
+    },
+    {
+        title:'unidades',
+        unit:6,
+        id:'sadfdafadsfd456565'
+    },
+]
+export {quantityList}

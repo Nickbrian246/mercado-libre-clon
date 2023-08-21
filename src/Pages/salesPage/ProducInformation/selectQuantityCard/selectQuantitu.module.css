@@ -22,16 +22,17 @@
     margin: 0;
 
 }
-.unit{
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    color: #3483fa !important;
-}
 .unitSelected{
     font-size: 16px !important;
     font-weight: 600 !important;
     color: #222324 !important;
 }
+.unit{
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #3483fa !important;
+}
+
 .container:hover{
     background-color: rgba(0,0,0,.04);
 }

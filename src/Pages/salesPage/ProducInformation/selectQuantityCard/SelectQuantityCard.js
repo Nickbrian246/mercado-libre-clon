@@ -5,13 +5,23 @@ const SelectQuantityCard = (props) => {
         unit,
         setQuantitySelected,
         quantitySelected,
-        id
+        id,
+        position, 
+        setPosition,
+        setQuantity
     } = props
+    let IsSelected = position === id;
+    let textActiveStyles =  styles.unitSelected;
+    let textNormalStyles = styles.unit;
+    const handleClick = (id) =>{
+        setPosition(id)
+        setQuantity(`${unit} ${title}`)
+    }
     return (
         <>
-        <li className={styles.container}>
-            <p className={styles.unit}>1</p>
-            <p className={styles.unit}>unidad</p>
+        <li className={styles.container} onClick={() => {handleClick(id)}}>
+            <p className={IsSelected ?  textNormalStyles: textActiveStyles}>{unit}</p>
+            <p className={IsSelected ? textNormalStyles: textActiveStyles}>{title}</p>
 
         </li>
         
