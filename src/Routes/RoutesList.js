@@ -3,6 +3,8 @@ import { MainPage } from "../Pages/Main";
 import { PayPage } from "../Pages/payPage";
 import { CheckAndConfirm } from "../Pages/CheckNconfirm";
 import { ProductBought } from "../Pages/productBought";
+import { ShoppingCart } from "../Pages/shoppingcart";
+// import { ShoppingCart } from "../Pages/Main/header/ShoppingCar";
 
 
 const routeList = [
@@ -40,6 +42,13 @@ const routeList = [
   description: 'details about send and price check',
   status: false,
   element: <ProductBought path= '/productDetails'/>
+}, 
+{
+  path:'/ShoppingCart',
+  title:'pagina de rivision de la compra',
+  description: 'details about send and price check',
+  status: false,
+  element: <ShoppingCart path= '/ShoppingCard'/>
 }, 
 ];
 

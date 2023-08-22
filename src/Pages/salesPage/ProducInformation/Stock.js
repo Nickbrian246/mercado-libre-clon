@@ -74,7 +74,6 @@ const Stock = ( ) => {
                       handleOpenModalToSelectQuantity = {handleOpenModalToSelectQuantity}
                       />
                   ))}
-        
               </div>
       )}
       <p className="stockContainer-availability">{`(${randomDisponibility} disponibles)`}</p>

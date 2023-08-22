@@ -11,9 +11,7 @@ import { ProfileBox } from "./profileBox";
 import { MyShopping } from "./MyShopping";
 import { Favorites } from "./favorites/index";
 import { Bell } from "./bellNotifications";
-import { ShoppingCar } from "./ShoppingCar";
-import { AutoCompleteList } from "./autoCompleteList/AutoCompleteList";
-// import { CarouselSlider } from "../Corousel";
+import { HeaderShoppingCart } from "./HeaderShoppingCar";
 
 const Header = () => {
 
@@ -58,8 +56,8 @@ const Header = () => {
       <Col>
         <Bell/>
       </Col>
-      <Col>
-        <ShoppingCar/>
+      <Col  style={{paddingTop:"4px", paddingLeft:"2px"}}>
+        <HeaderShoppingCart/>
       </Col>
     </Row>
 
