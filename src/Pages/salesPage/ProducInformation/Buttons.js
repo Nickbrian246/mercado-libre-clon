@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 const BuyNAddButtons = (props) => {
   const {id} = props
+  const {products} = useSelector((state) => state.howManyProducts)
   const disptach= useDispatch()
   // const {
   //   price,
@@ -26,7 +27,8 @@ const BuyNAddButtons = (props) => {
   // }
   const handleAddCardBtn=()=> {
     disptach((setAddCard({
-      id
+      id,
+      products,
     })))
   }
 

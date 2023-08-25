@@ -25,8 +25,6 @@
         description,
         isDiscount,
       } = props;
-
-      const navigate = useNavigate()
       const dispatch = useDispatch()
 
       const handleClickContainer = () => {

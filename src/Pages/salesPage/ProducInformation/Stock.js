@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 import {IoIosArrowUp} from 'react-icons/io';
 import { SelectQuantityCard } from "./selectQuantityCard/SelectQuantityCard";
 import { quantityList } from "./selectQuantityCard/quantituyList";
 import stockStyles from './stock.module.css'
-const Stock = ( ) => {
+const Stock = () => {
+  const {productId} = useParams()
   const [isOpenModalToSelectQuantity, setIsOpenModalToSelectQuantity] = useState(false);
   const [quantitySelected, setQuantitySelected] = useState(false)
   const [position, setPosition] = useState(`sadfdafadsfd`)
@@ -70,6 +72,7 @@ const Stock = ( ) => {
                       position = {position}
                       setPosition = {setPosition}
                       id = {item.id} 
+                      productId = {productId}
                       setQuantity = {setQuantity}
                       handleOpenModalToSelectQuantity = {handleOpenModalToSelectQuantity}
                       />

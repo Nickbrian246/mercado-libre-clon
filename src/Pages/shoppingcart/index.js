@@ -6,6 +6,7 @@ import { Header } from "../Main/header";
 import { CarouselComponentMain } from "../../components/carouselHomeComponent/carouselWithTitle";
 import { FooterUserInfo } from "../Main/footer/footerInformation/footerUserInfo/FooterUserinfo";
 import { CollabsableFooterNav } from "../Main/footer/footerInformation/collapsableNav/collapsableNav";
+import { CartItem } from "./components/cartComponent";
 // ****************************************************
 //**Services******************************************* */
 import { fetchProductWithId } from "../../services";
@@ -16,7 +17,6 @@ import { useParams, useSearchParams } from "react-router-dom";
 //****************************************************************** */
 
 import { Col,Row } from "antd/lib/grid";
-
 
 
 const ShoppingCart = () => {
@@ -46,6 +46,18 @@ useEffect(()=>{
       <Header/>
     </Col>
 
+    </Row>
+    <Row gutter={[10,10]}  style={{marginTop:"50px"}} justify='center'>
+      <Col>
+        <div style={{width:"100",height:"500px"}}>
+        <CartItem/>
+        </div>
+      </Col>
+      <Col>
+      <div style={{width:"100%", background:"red",height:"500px"}}>
+        dsfa
+        </div>
+      </Col>
     </Row>
 
 

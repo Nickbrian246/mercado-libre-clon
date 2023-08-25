@@ -5,6 +5,7 @@ const SelectQuantityCard = (props) => {
     const dispatch = useDispatch()
     const {
         title,
+        productId,
         unit,
         setQuantitySelected,
         quantitySelected,
