@@ -32,9 +32,6 @@ const QuantitySelector = (props) => {
     const handleMinusBtn = () => {
         dispatch(substractAnElement(id))
     }
-    const handleOnChange = () => {
-        
-    }
     useEffect(()=>{
         const {products} = cartProducts.find((product) => product.id === id);
         setQuantity(products)
