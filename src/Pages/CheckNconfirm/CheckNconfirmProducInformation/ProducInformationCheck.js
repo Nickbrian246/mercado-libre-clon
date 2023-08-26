@@ -25,7 +25,6 @@ const ProductInformationCheckNConfirm = (props) => {
   const {image, price, title, status, id} = props
   const[ modal, setModal ] = useState(false);
   const navigate = useNavigate();
-  console.log(modal,'soy modal');
 
   // const hanldeClick = () => {
   //   navigate('/');

@@ -35,8 +35,6 @@ const HorizontalSlider = (props) => {
 //   dispatch(setFakeProductsGroup2(card))
 // },[])
 
-console.log(groupOfProducts,'soy el conjunto de proudctos ')
-
   return (
     <> 
     <div className="carousel-container-horizontalSlider">

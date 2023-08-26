@@ -27,12 +27,12 @@ const Search = () => {
   }
 
   const onSearch = (value) => {
-    console.log(value);
+    
   };
 
   const handleInput = (event) => {
     setInputSearch(event.target.value);
-    console.log(inputSearch); 
+ 
   };
   const handleOnBlur = () => {
     setNoCoincidences(false)

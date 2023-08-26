@@ -86,6 +86,8 @@
     flex-direction: column;
     margin-bottom: 0px;
     padding-bottom: 0px;
+    height: fit-content;
+    margin-bottom: 20px;
 }
 .offerContainer{
     display: flex;
@@ -104,6 +106,7 @@
 .price{
     font-weight: 480;
     font-size: 20px;
+    
 }
 .shippingContainer{
     display: flex;

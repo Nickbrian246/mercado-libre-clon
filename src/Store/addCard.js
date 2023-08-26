@@ -12,21 +12,35 @@ export const addCard = createSlice ({
   reducers: {
     setAddCard: (state, action) => {
       const { id, products } = action.payload;
-      const currentGroupOfProducts = state.addCard;
-      console.log(currentGroupOfProducts,"soy el gruoujpiiohu")
-      const checkIfIdExist = currentGroupOfProducts.findIndex((productIdInCart) => productIdInCart === id);
-      console.log((`id encontreado o no `, checkIfIdExist));
-      if (checkIfIdExist >= 0) {
-        console.log(checkIfIdExist,`entrnadon con id`)
-        let currentProduct = currentGroupOfProducts[checkIfIdExist];
-        let updateInformationProduct = { ...currentProduct, products };
-        currentGroupOfProducts.splice(checkIfIdExist, 1, updateInformationProduct);
-        state.addCard = [currentGroupOfProducts]
-        return;
-      } else {
-        state.addCard = [...state.addCard, action.payload];
-      }
+      const checkIfExist= state.addCard.some((item) => {return item.id=== id});
+      const index = state.addCard.findIndex((item) => { return item.id === id});
+      if(checkIfExist){
+        state.addCard[index].products = state.addCard[index].products + products
+      }else {
+        state.addCard = [...state.addCard, action.payload];   
+      } 
     },
+    addItem:(state, action) => {
+      const id = action.payload
+      const index = state.addCard.findIndex((item) => { return item.id === id});
+        state.addCard[index].products = state.addCard[index].products + 1
+      
+    },
+    setItem:(state, action) => {
+      const {id,  products} = action.payload
+      const index = state.addCard.findIndex((item) => { return item.id === id});
+        state.addCard[index].products = products
+      
+    },
+    substractAnElement:(state,action) => {
+      const id = action.payload
+      const index = state.addCard.findIndex((item) => { return item.id === id});
+        state.addCard[index].products = state.addCard[index].products - 1
+    },
+    deleteItem:(state, action) =>{
+        const id = action.payload;
+        state.addCard = state.addCard.filter((product) => product.id !== id);
+    }
   }
   
     },
@@ -35,4 +49,4 @@ export const addCard = createSlice ({
 export default addCard.reducer;
 
 
-export const {setAddCard, } = addCard.actions;
+export const {setAddCard,addItem,substractAnElement,deleteItem,setItem } = addCard.actions;

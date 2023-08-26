@@ -1,27 +1,43 @@
 import styles from "./cartItem.module.css"
 import { QuantitySelector } from "../../../../components/quantitySelector";
 import { useEffect, useState } from "react";
+import { calculateDiscount } from "../../utils";
+import { useDispatch } from "react-redux";
+import { addItem,substractAnElement } from "../../../../Store/addCard";
 
 const CartItem = ( props ) => {
     const [availability, setAvailability] = useState('')
+    const [howMuchSaveWithDiscount, setHowMuchSaveWithDiscount] = useState(``)
+    const [priceWithDiscount, setPriceWithDiscount] = useState(``)
+    const  dispatch = useDispatch()
     const {
         title,
         isFull,
         productTitle,
         price,
+        handleDeleteItem,
         hasDiscount,
         howMuchDiscount,
         hasFreeShipping,
+        image,
+        id
     } = props
     function getRandomNumberInRange(minimum, maximum) {
         const randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
         return randomNumber;
     }
+    console.log(price);
     useEffect(() => {
         let  availability = getRandomNumberInRange(40, 100);
         setAvailability(availability)
+        if(hasDiscount){
+            let priceWithDiscount = calculateDiscount(howMuchDiscount,price)
+            setPriceWithDiscount(priceWithDiscount)
+            let howMuchSave = (price - priceWithDiscount).toFixed(2);
+            setHowMuchSaveWithDiscount(howMuchSave)
+            return
+        }
     },[])
-    
 
     return (
         <>
@@ -30,26 +46,28 @@ const CartItem = ( props ) => {
                 <h2 className={styles.title}>
                     Productos
                 </h2>
-                <img
-                className={styles.shippingFullImg}
-                alt="product img"
-                src="https://http2.mlstatic.com/frontend-assets/buyingflow-web-cart/icons/full_large.svg"
-                />
+                {hasDiscount && (
+                    <img
+                        className={styles.shippingFullImg}
+                        alt="product img"
+                        src="https://http2.mlstatic.com/frontend-assets/buyingflow-web-cart/icons/full_large.svg"
+                    />
+                )}
 
             </div>
             <div className= {styles.productInformationContainer}>
                 <div className= {styles.productdetailsContainer}>
                     <img
                     alt="decorative images"
-                    src="https://http2.mlstatic.com/mesa-plegable-portafolio-plastico-180m-resistente-color-blanco-S_886697-MLU70710013662_072023-R.jpg"
+                    src={image}
                     className={styles.imageContainer}
                     />
                     <div className={styles.productDetails}>
                         <p className={styles.productTitle}>
-                        Mesa Plegable Portafolio Plastico 1.80m Resistente
+                        {productTitle}
                         </p>
                         <div className={styles.BtnsContainer}>
-                            <button className={styles.btn}>
+                            <button onClick={()=>{handleDeleteItem(id)}} className={styles.btn}>
                                     Eliminar
                             </button >
                             <button  className={styles.btn}>
@@ -64,27 +82,32 @@ const CartItem = ( props ) => {
 
                 </div>
                 <div className={styles.quantityNAvailability}>
-                    <QuantitySelector/>
+                    <QuantitySelector
+                        id = {id}
+                    />
                     <p className={styles.quantityAvailability}>{`${availability ? availability : ""} ${availability >1 ? "disponibles" : "disponible"}`}</p>
                 </div>
-                <div className={styles.priceNOffer}>
-                    <div className={styles.offerContainer}>
-                        <p className={styles.offer}>-32%</p>
-                        <p className={styles.descount}>$67,455</p>
+                    <div className={styles.priceNOffer}>
+                        {hasDiscount && (
+                            <div className={styles.offerContainer}>
+                                <p className={styles.offer}>{`-${howMuchDiscount}%`}</p>
+                                <p className={styles.descount}>{`$${howMuchSaveWithDiscount}`}</p>
+                            </div>
+                        )}
+                        <div className={styles.price}>
+                            {hasDiscount ? ( <p>{`$${priceWithDiscount}`}</p>) :  <p>{`$${price}`}</p>}
+                        </div>
+                
                     </div>
-                    <div className={styles.price}>
-                        <p>{`$42,000`}</p>
-                    </div>
-
-                </div>
             </div>
             <div className= {styles.shippingContainer}>
                 <p>
                     Envío
                 </p>
-                <p>
-                    Gratis
-                </p>
+            {hasDiscount 
+            ? (<p>Gratis</p>)
+            : (<p>${getRandomNumberInRange(10, 100)}</p>)
+        }
 
             </div>
         </section>

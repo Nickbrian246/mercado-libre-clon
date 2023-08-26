@@ -9,7 +9,7 @@ import './index.css';
 
 const CardComments = () => {
   const data = useSelector((state) => state.salesCommentsInformation.comments)
-  console.log(data, 'im data');
+
 
   return(
     <>
