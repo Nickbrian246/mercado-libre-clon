@@ -7,7 +7,7 @@ import { addItem,substractAnElement,setItem } from '../../Store/addCard';
 import { useSelector } from 'react-redux';
 
 const QuantitySelector = (props) => {
-    const {id} = props
+    const {id,setIsZeroItems} = props
     const cartProducts = useSelector((state) => state.addCard.addCard)
     const [quantity, setQuantity] = useState(1);
     const [isZero, setIsZero] = useState(false)
@@ -22,8 +22,11 @@ const QuantitySelector = (props) => {
         let checkOnlyNumber = checkInputForOnlyNumber(inputValue)
         if (inputValue === "") {
             setQuantity(0);
+            setIsZeroItems(true)
         } else if (checkOnlyNumber) {
+            setIsZeroItems(false)
             setQuantity(parseInt(inputValue));
+            dispatch(setItem({id, products:parseFloat(inputValue)}))
         }
     };
     const handlePlusBtn = (id) => {

@@ -118,3 +118,14 @@
     color: #00a650;
     font-weight: 500;
 }
+.quantityNAvailability{
+    max-width: 110px;
+}
+.alertAtLeastOneItem{
+    color: red;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 12px 0 0;
+    white-space: normal;
+    text-align: center;
+}

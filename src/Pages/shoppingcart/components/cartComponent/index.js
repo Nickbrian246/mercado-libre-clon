@@ -3,13 +3,16 @@ import { QuantitySelector } from "../../../../components/quantitySelector";
 import { useEffect, useState } from "react";
 import { calculateDiscount } from "../../utils";
 import { useDispatch } from "react-redux";
-import { addItem,substractAnElement } from "../../../../Store/addCard";
+import { useSelector } from "react-redux";
 
 const CartItem = ( props ) => {
     const [availability, setAvailability] = useState('')
     const [howMuchSaveWithDiscount, setHowMuchSaveWithDiscount] = useState(``)
-    const [priceWithDiscount, setPriceWithDiscount] = useState(``)
-    const  dispatch = useDispatch()
+    const [priceWithDiscount, setPriceWithDiscount] = useState(``);
+    const [isZeroItems, setIsZeroItems] = useState(false);
+    const [productsInCart, setProductsInCart] = useState(0)
+    const cartProducts = useSelector((state) => state.addCard.addCard)
+
     const {
         title,
         isFull,
@@ -22,14 +25,16 @@ const CartItem = ( props ) => {
         image,
         id
     } = props
+    
     function getRandomNumberInRange(minimum, maximum) {
         const randomNumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
         return randomNumber;
     }
-    console.log(price);
     useEffect(() => {
         let  availability = getRandomNumberInRange(40, 100);
         setAvailability(availability)
+        const { products} = cartProducts.find((product) => product.id === id)
+        setProductsInCart(products)
         if(hasDiscount){
             let priceWithDiscount = calculateDiscount(howMuchDiscount,price)
             setPriceWithDiscount(priceWithDiscount)
@@ -37,7 +42,7 @@ const CartItem = ( props ) => {
             setHowMuchSaveWithDiscount(howMuchSave)
             return
         }
-    },[])
+    },[hasDiscount,howMuchDiscount,price,cartProducts,id])
 
     return (
         <>
@@ -84,8 +89,17 @@ const CartItem = ( props ) => {
                 <div className={styles.quantityNAvailability}>
                     <QuantitySelector
                         id = {id}
+                        setIsZeroItems = {setIsZeroItems}
                     />
-                    <p className={styles.quantityAvailability}>{`${availability ? availability : ""} ${availability >1 ? "disponibles" : "disponible"}`}</p>
+                    {availability < productsInCart 
+                    ? (<p className={styles.alertAtLeastOneItem}>{`puedes hasta ${availability} u`}</p>)
+                    :isZeroItems 
+                    ? (<p className={styles.alertAtLeastOneItem}>Puedes comprar desde 1 u</p>)
+                    : (<p className={styles.quantityAvailability}>
+                        {`${availability ? availability : ""} ${availability >1 ? "disponibles" : "disponible"}`}
+                    </p>)
+                    }
+
                 </div>
                     <div className={styles.priceNOffer}>
                         {hasDiscount && (
