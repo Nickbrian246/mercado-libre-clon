@@ -109,7 +109,7 @@ const CartItem = ( props ) => {
                             </div>
                         )}
                         <div className={styles.price}>
-                            {hasDiscount ? ( <p>{`$${priceWithDiscount}`}</p>) :  <p>{`$${price}`}</p>}
+                            {hasDiscount ? ( <p>{`$${priceWithDiscount * productsInCart}`}</p>) :  <p>{`$${price * productsInCart }`}</p>}
                         </div>
                 
                     </div>

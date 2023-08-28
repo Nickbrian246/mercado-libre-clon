@@ -7,6 +7,9 @@ import { CarouselComponentMain } from "../../components/carouselHomeComponent/ca
 import { FooterUserInfo } from "../Main/footer/footerInformation/footerUserInfo/FooterUserinfo";
 import { CollabsableFooterNav } from "../Main/footer/footerInformation/collapsableNav/collapsableNav";
 import { CartItem } from "./components/cartComponent";
+import { EmpyCart } from "./components/empyCart";
+import { EmptyResumeShopping } from "./components/empyResumeShopping";
+import { ShoppingResume } from "./components/shoppingResume";
 // ****************************************************
 //**Services******************************************* */
 import { fetchProductWithId } from "../../services";
@@ -60,7 +63,7 @@ useEffect(()=>{
       setGroupOfCartProducts(newGroup)
       dispatch(deleteItem(id))
   }
-  
+
   return (
     <>
     <Row style={{height:'100px',background:'#fff159', }} justify='center'>
@@ -71,8 +74,15 @@ useEffect(()=>{
     </Row>
     <Row gutter={[10,10]}  style={{marginTop:"50px"}} justify='center'>
       <Col>
-        <div style={{width:"100",height:"auto" , display:"flex",flexDirection:"column",gap:"50px"}}>
-          {groupOfCartProducts.length >0 &&(groupOfCartProducts.map((product) => {
+        <div
+        style={{
+          width:"100",
+          height:"auto",
+          display:"flex",
+          flexDirection:"column",
+          gap:"50px",
+          }}>
+          {groupOfCartProducts.length >0 ? (groupOfCartProducts.map((product) => {
               let hasDiscount =  (Math.floor(Math.random() * 10) + 1) > 5;
               let howMuchDiscount = Math.floor(Math.random() * 80) + 1;
               return <CartItem
@@ -87,15 +97,15 @@ useEffect(()=>{
               handleDeleteItem = {handleDeleteItem}
               id = {product.id}
               key = {product.id}
-            />
-            }))
+            /> 
+            })): <EmpyCart/>
           }
         </div>
       </Col>
       <Col>
-      <div style={{width:"100%", background:"red",height:"500px"}}>
-        dsfa
-        </div>
+      <div style={{width:"100%",height:"500px"}}>
+        {groupOfCartProducts.length > 0 ? <ShoppingResume groupOfCartProducts = {groupOfCartProducts}/> : <EmptyResumeShopping/>}
+      </div>
       </Col>
     </Row>
 
