@@ -25,31 +25,38 @@ const ProductInformation = (props) => {
     price,
     title,
     status,
+    isCartItems,
+    total,
+    quantityOfProducts,
+    listOfCartProducts
   }= props
-
+  let totalWithShippingCost = (total + 65)
   return (
     <>
-    <div  className="productInformation-container">
-      <div className="productImageAndInformation-container">
-        <img className="productImageAndInformation-Image" src={`${image}`} alt="imagen del producto"/>
-        <p className="productName">{`${title}`}</p>
-        <p className="productName"  >cantidad: {products }</p>
-
-
-      </div>
+    <div id="top"  className="productInformation-container">
+      {isCartItems 
+      ? <div className="productImageAndInformationFromShoppingCart-container">
+          <p>Resumen de la compra </p>
+        </div>
+      : <div className="productImageAndInformation-container">
+          <img className="productImageAndInformation-Image" src={`${image}`} alt="imagen del producto"/>
+          <p className="productName">{`${title}`}</p>
+          <p className="productName"  >cantidad: {quantityOfProducts }</p>
+        </div>
+      }
       <div className="productPrice-container">
           <div>
-          <p className="productName" >Producto</p>
+          <p className="productName" >{isCartItems ? `Productos (${quantityOfProducts})`:`Producto ${quantityOfProducts}` }</p>
           {status === true &&( <p className="productName">envio</p>)}
           </div>
           <div>
-          <p>{`$${price}`}</p>
+          <p>{`$${isCartItems ? total: price}`}</p>
           {status === true &&( <p className="product-send-free">Gratis</p>)}
           </div>
       </div>
       <div className="price-container">
         <p>Pagas</p>
-        <p>{`$${price * products}`}</p>
+        <p>{`$${ isCartItems ? (status ? (total) : totalWithShippingCost.toFixed(2)) :(price * quantityOfProducts).toFixed(2)}`}</p>
       </div>
 
       {status === true  &&(

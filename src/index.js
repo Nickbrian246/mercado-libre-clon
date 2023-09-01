@@ -15,6 +15,8 @@ import cardSelected from './Store/cardSelected';
 import imageSelected from './Store/imageSelected';
 import addCard from './Store/addCard';
 import howManyProducts from './Store/howManyProducts'
+import relativePrice from './Store/relativePrices'
+import productsFromCart from './Store/productsFromCart';
 
 
 const store = configureStore({
@@ -26,7 +28,9 @@ const store = configureStore({
     cardSelected: cardSelected,
     imageSelected:imageSelected,
     addCard:addCard,
-    howManyProducts:howManyProducts
+    howManyProducts:howManyProducts,
+    relativePrice:relativePrice,
+    productsFromCart:productsFromCart,
 
   },
 })

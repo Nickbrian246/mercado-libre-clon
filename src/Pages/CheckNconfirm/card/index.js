@@ -21,60 +21,30 @@ const CardCheckNConfirm = (props) => {
     <p style={{fontSize:'26px', fontWeight:'bold'}}>Revisa y confirma tu compra</p>
     <p>Detalles de la entrega</p>
       <div className="container">
-
-
         <div className="card-container">
-
           <div className="card-Cp-container">
-
-
-
             <MdLocationPin className="icon" />
             <div className="text-container">
               <p>C.P 5469</p>
               <p>calle random </p>
             </div>
-
-
-
-
-
           </div>
           <p>Editar o elegir otro</p>
-
         </div>
-
         <div className="card-container">
-
           <div className="card-Cp-container">
-
-
-
             <GrDeliver className="icon" />
             <div className="text-container">
               <p>LLega a tu domicilio el Lunes </p>
             </div>
-
-
-
-
-
           </div>
           <p>Editar o elegir otro</p>
-
         </div>
-
       </div>
-      
       <div className="payment-details">
         <p>Detalles del  pago</p>
-
         <div className="card-container">
-
           <div className="card-Cp-container">
-
-
-
           <img 
           src={src}
           alt = 'imagen de banco'
@@ -89,19 +59,9 @@ const CardCheckNConfirm = (props) => {
               <p>{description} credito ****{accountNumber}</p>
               <p>pagas ${price *products} </p>
             </div>
-
-
-
-
-
           </div>
           <p>Modificar</p>
-
         </div>
-
-
-
-
       </div>
 
     </>

@@ -19,19 +19,36 @@ import { useParams } from "react-router-dom";
 
 // Utils ¨****************************************************//
 import { fetchProductWithId } from "../../services";
+import { useSelector } from "react-redux";
 //******************************************************************* */
 
 
 
 const PayPage = () => {
   const [isCardSelected, setIsCardSelected] = useState(false);
-  const [productSelected, setProductSelected] = useState({})
+  const [productSelected, setProductSelected] = useState({});
+  const [total, setTotal] = useState(0);
+  const [quantityOfProducts, setQuantityOfProducts] = useState(0);
+  const [listOfCartProducts, setListOfCartProduct] = useState([]);
+  const [isCartItems,setIsCartItem] = useState(false)
+  const productsInCart = useSelector((state) => state.productsFromCart.groupOfProducts)
   const {productId} = useParams()
   useEffect(()=>{
-    if(productId){
+    if(productId!== `cartProducts`){
+      setIsCartItem(false)
       fetchProductWithId(productId)
       .then(res => setProductSelected(res) )
       .catch((err) => {console.log(err);})
+    }else {
+      const {
+        total,
+        totalProductsItemsInCart,
+        groupOfCartProducts,
+      } = productsInCart;
+      setIsCartItem(true)
+      setTotal(total);
+      setQuantityOfProducts(totalProductsItemsInCart)
+      setListOfCartProduct(groupOfCartProducts);
     }
   },[])
 
@@ -103,28 +120,27 @@ let status = Math.random() > 0.5
 
           <Col style={{ marginTop: '80px', marginBottom: '50px' }} span={24}>
             <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            { isCardSelected 
-              ?  
-            <Button
-                Button
-                type="primary"
-                size="large"
-                style={{ marginRight: '48px',}}
-              >
-                <Link to={`/checkAndConfirm/${id}`}>Continuar</Link>
-            </Button> 
-              :
-            <Button
-              Button
-              type="primary"
-              disabled
-              size="large"
-              style={{ marginRight: '48px' }}
-              
-            >
-            <Link to={`/checkAndConfirm/${id}`}>Continuar</Link>
-            </Button> }
-
+              {
+                isCartItems
+                ? <Button
+                    disabled = {!isCardSelected}
+                    Button
+                    type="primary"
+                    size="large"
+                    style={{ marginRight: '48px',}}
+                  >
+                    <Link to={`/checkAndConfirm/shoppingCartItems/#top`}>Continuar</Link>
+                  </Button> 
+                :  <Button
+                    disabled = {!isCardSelected}
+                    Button
+                    type="primary"
+                    size="large"
+                    style={{ marginRight: '48px',}}
+                  >
+                      <Link to={`/checkAndConfirm/${id}`}>Continuar</Link>
+                    </Button> 
+              }
             </div>
           </Col>
 
@@ -142,6 +158,10 @@ let status = Math.random() > 0.5
             price = {price}
             title = {title}
             status = {status}
+            isCartItems = {isCartItems}
+            total = {total}
+            quantityOfProducts = {quantityOfProducts}
+            listOfCartProducts = {listOfCartProducts}
             />
           </Col>
 

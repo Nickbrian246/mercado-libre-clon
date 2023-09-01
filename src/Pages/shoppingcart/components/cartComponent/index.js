@@ -4,13 +4,16 @@ import { useEffect, useState } from "react";
 import { calculateDiscount } from "../../utils";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { setProductsFromCart } from "../../../../Store/productsFromCart";
+import { Link } from "react-router-dom";
 
 const CartItem = ( props ) => {
     const [availability, setAvailability] = useState('')
     const [howMuchSaveWithDiscount, setHowMuchSaveWithDiscount] = useState(``)
     const [priceWithDiscount, setPriceWithDiscount] = useState(``);
     const [isZeroItems, setIsZeroItems] = useState(false);
-    const [productsInCart, setProductsInCart] = useState(0)
+    const [productsInCart, setProductsInCart] = useState(0);
+    const dispatch = useDispatch()
     const cartProducts = useSelector((state) => state.addCard.addCard)
 
     const {
@@ -33,7 +36,7 @@ const CartItem = ( props ) => {
     useEffect(() => {
         let  availability = getRandomNumberInRange(40, 100);
         setAvailability(availability)
-        const { products} = cartProducts.find((product) => product.id === id)
+        const { products} = cartProducts.find((product) => product.id === id);
         setProductsInCart(products)
         if(hasDiscount){
             let priceWithDiscount = calculateDiscount(howMuchDiscount,price)
@@ -44,6 +47,17 @@ const CartItem = ( props ) => {
         }
     },[hasDiscount,howMuchDiscount,price,cartProducts,id])
 
+    const handleBuyBtn =() => {
+        dispatch(setProductsFromCart({
+            hasDiscount,
+            howMuchDiscount,
+            price,
+            id,
+            productsInCart,
+            title,
+            image,
+        }))
+    }
     return (
         <>
         <section className={styles.container}>
@@ -78,8 +92,8 @@ const CartItem = ( props ) => {
                             <button  className={styles.btn}>
                                     Guardar
                             </button>
-                            <button  className={styles.btn}>
-                                    Comprar ahora
+                            <button  onClick={()=>{handleBuyBtn()}} className={styles.btn}>
+                                    <Link to={`/PayPage/${id}/#top`}>Comprar ahora</Link>
                             </button>
 
                         </div>
@@ -109,7 +123,9 @@ const CartItem = ( props ) => {
                             </div>
                         )}
                         <div className={styles.price}>
-                            {hasDiscount ? ( <p>{`$${priceWithDiscount * productsInCart}`}</p>) :  <p>{`$${price * productsInCart }`}</p>}
+                            {hasDiscount 
+                            ? <p>{`$${(priceWithDiscount * productsInCart).toFixed(2)}`}</p>
+                            : <p>{`$${(price * productsInCart).toFixed(2) }`}</p>}
                         </div>
                 
                     </div>

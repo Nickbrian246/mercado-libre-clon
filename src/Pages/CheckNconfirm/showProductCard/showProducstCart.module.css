@@ -1,0 +1,33 @@
+.container{
+    width: 640px;
+    max-height: 200px;
+    background-color:#ffff;
+    border: 1.8px solid #e9e9e9;
+    margin-top: 10px;
+}
+.shippingContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1.2px solid #e9e9e9;
+}
+.productContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.productContainer > p {
+    margin-bottom: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.29
+}
+.radioContainer{
+    padding: 20px;
+}
+.productImage{
+    width: 38px;
+    height: 38px;
+    border-radius: 100%;
+}

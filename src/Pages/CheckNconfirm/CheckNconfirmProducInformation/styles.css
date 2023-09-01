@@ -24,6 +24,21 @@
   width: 70px;
   border-radius: 100%;
 }
+.productImageAndInformationFromShoppingCart-container{
+  display: flex;
+  min-width: 380px;
+  min-height: 100px;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+  gap: 10px;
+  border-bottom: 1.8px solid #dcdcdc;
+}
+.productImageAndInformationFromShoppingCart-container > p{
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+}
 
 .productName{
   color: rgba(0,0,0,.55);
