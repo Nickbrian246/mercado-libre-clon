@@ -41,12 +41,12 @@ const ProductInformation = (props) => {
       : <div className="productImageAndInformation-container">
           <img className="productImageAndInformation-Image" src={`${image}`} alt="imagen del producto"/>
           <p className="productName">{`${title}`}</p>
-          <p className="productName"  >cantidad: {quantityOfProducts }</p>
+          <p className="productName"  >cantidad: { isCartItems ? quantityOfProducts : products }</p>
         </div>
       }
       <div className="productPrice-container">
           <div>
-          <p className="productName" >{isCartItems ? `Productos (${quantityOfProducts})`:`Producto ${quantityOfProducts}` }</p>
+          <p className="productName" >{isCartItems ? `Productos (${ isCartItems ? quantityOfProducts : products})`:`Producto ${ isCartItems ? quantityOfProducts : products}` }</p>
           {status === true &&( <p className="productName">envio</p>)}
           </div>
           <div>
@@ -56,7 +56,7 @@ const ProductInformation = (props) => {
       </div>
       <div className="price-container">
         <p>Pagas</p>
-        <p>{`$${ isCartItems ? (status ? (total) : totalWithShippingCost.toFixed(2)) :(price * quantityOfProducts).toFixed(2)}`}</p>
+        <p>{`$${ isCartItems ? (status ? (total) : totalWithShippingCost.toFixed(2)) :(price * products).toFixed(2)}`}</p>
       </div>
 
       {status === true  &&(

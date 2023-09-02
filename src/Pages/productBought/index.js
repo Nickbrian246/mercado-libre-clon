@@ -13,13 +13,19 @@ import { FooterUserInfo } from "../Main/footer/footerInformation/footerUserInfo/
 
 const ProductBought = () => {
   const [product, setProduct] = useState({})
+  const [isFromShoppingCart, setIsFromShoppingCasrt] = useState(false)
   const {productId} = useParams()
   useEffect(()=>{
-
-    fetchProductWithId(productId)
-    .then((res) => setProduct(res))
-    .catch((err) => console.log(err))
+    if(productId === `cartProducts`) {
+      setIsFromShoppingCasrt(true)
+    }else {
+      setIsFromShoppingCasrt(false)
+      fetchProductWithId(productId)
+      .then((res) => setProduct(res))
+      .catch((err) => console.log(err))
+    }
   },[])
+
   const {
     title,
     image,
@@ -45,6 +51,7 @@ const ProductBought = () => {
     image = {image}
     title = {title}
     id = {id}
+    isFromShoppingCart = {isFromShoppingCart}
     />
   </Row>
   <Row style={{ height:"300px"}} justify="center"  align="middle" >
@@ -54,6 +61,7 @@ const ProductBought = () => {
     price = {price}
     productDescription = {description}
     id = {id}
+    isFromShoppingCart = {isFromShoppingCart}
     />
       <CollabsableFooterNav/>
     <FooterUserInfo/>

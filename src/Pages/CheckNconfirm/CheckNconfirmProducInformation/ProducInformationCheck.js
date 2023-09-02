@@ -82,6 +82,7 @@ const ProductInformationCheckNConfirm = (props) => {
         title = {title}
         image = {image}
         id = {id}
+        isProductsFromCart = {isProductsFromCart}
         />
       )}
     

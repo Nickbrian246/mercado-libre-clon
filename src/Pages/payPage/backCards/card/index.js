@@ -32,10 +32,11 @@ const handleClick = () => {
     <>
     <div className='cardBank-container' onClick={()=> {handleClick()}}>
         <Radio value={_id}>
-          <div style={{width:'100%'}}>
+          <div style={{width:'100%',display:'flex', justifyContent:'center', alignItems:"center"}}>
           <picture className="bank-picture">
-            <img className="image-bank" src={`${src}`} alt="bank"/>
-
+            <div className="image-banck-container">
+              <img className="image-bank" src={`${src}`} alt="bank"/>
+            </div>
           </picture>
           <div className="bank-name-container">
             <p>{description}</p>
