@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import  carouselStyles from './carousel.module.css';
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { GeneralProductCard } from '../generalProductCard/GeneralProductCard';
+import { CarouselProductItemSkeleton } from '../skeleton/CardSkeloton';
 
 
 
@@ -16,15 +17,17 @@ const CostumeCarousel = (props) => {
   const handleNextPage = () => {
     setCurrentPage((prevPage) => Math.min(prevPage + 1, Math.ceil(productsGroup.length / ITEMS_PER_PAGE) - 1));
   };
+  const skeletonArr = new Array(15).fill(".")
 
   const startIndex = currentPage * ITEMS_PER_PAGE;
   const visibleData = productsGroup.slice(startIndex, startIndex + ITEMS_PER_PAGE);
   let hideNextBtn = isfor3slices ? currentPage >= Math.ceil(productsGroup.length / ITEMS_PER_PAGE) -5 : currentPage >= Math.ceil(productsGroup.length / ITEMS_PER_PAGE) - 1
-
+  console.log((productsGroup && productsGroup?.length>1));
   const translateValue = isfor3slices ? `translateX(-${currentPage * (100 / 8)}%)` :`translateX(-${currentPage * (100 / ITEMS_PER_PAGE)}%)`
   return (
     <div className={ isfor3slices ? carouselStyles.carousel3Slices :carouselStyles.carousel}>
-      <div className={
+      {(productsGroup && productsGroup?.length>1)
+      ?     <div className={
         isfor3slices
         ? carouselStyles.carouselContainerFor3Slices
         :carouselStyles.carouselContainer
@@ -44,7 +47,20 @@ const CostumeCarousel = (props) => {
             isDiscount = {isDiscount}
           />
         ))}
-      </div>
+            </div>
+      :     <div className={
+        isfor3slices
+        ? carouselStyles.carouselContainerFor3Slices
+        :carouselStyles.carouselContainer
+        } 
+        style={{
+          transform: translateValue
+          }}
+        >
+        {skeletonArr.map((item) => (
+          <CarouselProductItemSkeleton/>
+        ))}
+      </div>}
       <button
       className={`
       ${currentPage === 0 

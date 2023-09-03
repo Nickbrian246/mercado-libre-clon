@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 const ProductInformation = (props) => {
     const {groupOfCartProducts} = useSelector((state) => state.productsFromCart.groupOfProducts);
-    console.log(groupOfCartProducts,`desde la pag ginal`);
     const [purchasedProducts, setPurchasedProducts] = useState([]);
     const {
         title,
@@ -22,25 +21,45 @@ const ProductInformation = (props) => {
         <>
         <div className={isFromShoppingCart ? productInformationStyles.containerShoppingCart :productInformationStyles.container}>
             {isFromShoppingCart 
-            ?  <div className={productInformationStyles.containerShoppingCart}>
-                {purchasedProducts.map((product) => (
-                    <div className={productInformationStyles.productDetailsContainer}>
-                        <div className={productInformationStyles.imgContainerShippingCart}>
-                            <img
-                                alt={`product ${title}`}
-                                src ={product.image}
-                                className={productInformationStyles.productImgShopping}
-                            />
+            ? (purchasedProducts.length >1 
+                ?  <div className={productInformationStyles.containerShoppingCart}>
+                    {purchasedProducts.map((product) => (
+                        <div className={productInformationStyles.productDetailsContainer}>
+                            <div className={productInformationStyles.imgContainerShippingCart}>
+                                <img
+                                    alt={`product ${title}`}
+                                    src ={product.image}
+                                    className={productInformationStyles.productImgShopping}
+                                />
+                            </div>
+                            <p 
+                                className={productInformationStyles.productTitleShipping}
+                            >
+                                {product.title}
+                            </p>
                         </div>
-                        <p 
-                            className={productInformationStyles.productTitleShipping}
-                        >
-                            {product.title}
-                        </p>
+                    ))}
+                    </div> 
+                    : <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}> 
+                        <div className={productInformationStyles.productImgContainer}>
+                        <img
+                            alt={`product ${title}`}
+                            src ={purchasedProducts[0].image}
+                            className={productInformationStyles.productImg}
+                        />
+                        </div>
+                        <p className={productInformationStyles.productTitle}>{purchasedProducts[0].title}</p>
+                        <p className={productInformationStyles.succesConfirmationSpan}>tu pedido se proceso con exito !!! </p>
+                        </div>
+                    )
+            :   <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}> 
+                    <div className={productInformationStyles.productImgContainer}>
+                    <img
+                        alt={`product ${title}`}
+                        src ={image}
+                        className={productInformationStyles.productImg}
+                    />
                     </div>
-                ))}
-                </div> 
-            :   <div> <img alt={`product ${title}`} src ={image} className={productInformationStyles.productImg}/>
                     <p className={productInformationStyles.productTitle}>{title}</p>
                     <p className={productInformationStyles.succesConfirmationSpan}>tu pedido se proceso con exito !!! </p>
                 </div>

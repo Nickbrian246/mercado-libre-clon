@@ -13,6 +13,7 @@ import { ShowProductCart } from "./showProductCard/ShowProrductCart";
 import {GiPositionMarker} from "react-icons/gi";
 import { FooterInformation } from "../Main/footer/footerInformation/FooterInformation";
 import { FooterUserInfo } from "../Main/footer/footerInformation/footerUserInfo/FooterUserinfo";
+
 const CheckAndConfirm = () => {
   const {productId} = useParams()
   const [productSelected, setProductSelected] = useState({})
@@ -35,7 +36,6 @@ const CheckAndConfirm = () => {
           groupOfCartProducts
 
         } = shoppingCartItems;
-        console.log(shoppingCartItems,`que soy?`);
       setIsProdcutsFromCart(true);
       setHowManyProductsInCart(totalProductsItemsInCart)
       setTotalCartItems(total);
@@ -98,8 +98,12 @@ const CheckAndConfirm = () => {
   </Row>
   <Row  justify="start" style={{paddingLeft:"15%"}}>
     <Col  >
-    <h2 style={{fontSize:'26px', fontWeight:'bold'}}>Elige cuándo llega tu compra </h2>
-    <p><span style={{fontSize:`16px`}}><GiPositionMarker/></span>random street</p>
+        {isProductsFromCart && (
+          <>
+              <h2 style={{fontSize:'26px', fontWeight:'bold'}}>Elige cuándo llega tu compra </h2>
+              <p><span style={{fontSize:`16px`}}><GiPositionMarker/></span>random street</p>
+          </>
+        )}
     {groupOfProductsInCart.map((product) => (
           <ShowProductCart
           img ={product.image}

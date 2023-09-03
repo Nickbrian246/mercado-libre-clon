@@ -20,6 +20,7 @@ useEffect(()=>{
     if(isFromShoppingCart){
         let listOfNames = createListOfNameswithComas(groupOfCartProducts);
         setListOfNamesWithComas(listOfNames)
+        console.log(listOfNames);
     }
 },[])
 
@@ -42,13 +43,19 @@ useEffect(()=>{
             ?  <div className={styles.container} >
             <p>Detalles del Producto:</p>
             <div className={styles.shippingDetails}>
-                <p className={styles.title}>{`Nombre de los productos: `}
-                    {
-                        listOfNamesWithComas.map((name) =>(
-                            <span className={styles.spanInformation}>{`${name}`}</span>
-                        ))
-                    }
-                </p>
+                {
+                    groupOfCartProducts.length >1 
+                    ? <p className={styles.title}>{`Nombre de los productos: `}
+                        {
+                            listOfNamesWithComas.map((name) =>(
+                                <span key={name} className={styles.spanInformation}>{`${name}`}</span>
+                            ))
+                        }
+                    </p>
+                    : <p className={styles.title}>{`Nombre del producto: `}
+                                <span  className={styles.spanInformation}>{groupOfCartProducts[0].title}</span>
+                    </p>
+                }
                 <p className={styles.title}>{`metodo de pago seleccionado: `}<span className={styles.spanInformation}>{`${description ? description: "hooo lo sentimos no pudimos recuperar el metodo de pago seleccionado :(" }`}</span> </p>
                 <p className={styles.title}>{`cantidad: `}<span className={styles.spanInformation}>{groupOfCartProducts.length }</span> </p>
                 <p className={styles.title}>{`total: `}<span className={styles.spanInformation}>{`$${total}`}</span> </p>
@@ -62,7 +69,7 @@ useEffect(()=>{
             <p className={styles.title}>{`precio: `}<span className={styles.spanInformation}>{`$${price}`}</span> </p>
             <p className={styles.title}>{`metodo de pago seleccionado: `}<span className={styles.spanInformation}>{`${description ? description: "hooo lo sentimos no pudimos recuperar el metodo de pago seleccionado :(" }`}</span> </p>
             <p className={styles.title}>{`cantidad: `}<span className={styles.spanInformation}>{products }</span> </p>
-            <p className={styles.title}>{`total: `}<span className={styles.spanInformation}>{`${price*products}`}</span> </p>
+            <p className={styles.title}>{`total: `}<span className={styles.spanInformation}>{`$${price*products}`}</span> </p>
         </div>
             </div>
             }

@@ -45,7 +45,13 @@
 .productImg{
     width: 200px;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
+    border-radius: 100%;
+}
+.productImgContainer{
+    width: 200px;
+    height: 200px;
+    background: #ffff;
     border-radius: 100%;
 }
 .productTitle{

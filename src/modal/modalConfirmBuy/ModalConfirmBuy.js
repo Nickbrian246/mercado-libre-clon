@@ -21,7 +21,7 @@ const ModalConfirmBuy = (props) => {
   } = props;
 
   useEffect(() => {
-    if(groupOfCartProducts.length >1){
+    if(groupOfCartProducts?.length >1){
       let max5elements = groupOfCartProducts.slice(0,6);
       setElements(max5elements)
     }
@@ -49,6 +49,7 @@ const ModalConfirmBuy = (props) => {
       navigate(`/productDetails/${id}`)
     },1000)
   }
+  console.log(isProductsFromCart,`way down`);
   return (
     <>
       <section className={modalStyles.ModalContainer}>
@@ -74,7 +75,7 @@ const ModalConfirmBuy = (props) => {
             </div>
         }
         <div className={modalStyles.ProgressSection}>
-          {groupOfCartProducts.length > 1 && (<p>{`productos (${groupOfCartProducts.length})`}</p>)}
+          {(isProductsFromCart && groupOfCartProducts.length > 1) && (<p>{`productos (${groupOfCartProducts.length})`}</p>)}
           {
             isAnimationFinish 
             ? <p className={modalStyles.statustextInfo}>Su compra esta lista!!!</p>
