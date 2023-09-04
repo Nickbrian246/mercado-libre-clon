@@ -70,6 +70,7 @@ const CheckAndConfirm = () => {
   <Col span={[16] } style={{padding:'200px', paddingTop:"80px"}}>
     <CardCheckNConfirm 
     price = {price}
+    isProductsFromCart = {isProductsFromCart}
     />
 
   </Col>

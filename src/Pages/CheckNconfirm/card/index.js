@@ -9,7 +9,8 @@ import { useSelector } from "react-redux";
 
 const CardCheckNConfirm = (props) => {
   const {products} = useSelector((state) => state.howManyProducts)
-  const {price} = props
+  const {total} = useSelector((state) => state.productsFromCart.groupOfProducts)
+  const {price,isProductsFromCart} = props
   const {
   accountNumber,
   description,
@@ -57,7 +58,7 @@ const CardCheckNConfirm = (props) => {
             }} /> 
             <div className="text-container">
               <p>{description} credito ****{accountNumber}</p>
-              <p>pagas ${price *products} </p>
+              <p>pagas ${ isProductsFromCart ? total :    price *products} </p>
             </div>
           </div>
           <p>Modificar</p>

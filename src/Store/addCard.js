@@ -40,7 +40,10 @@ export const addCard = createSlice ({
     deleteItem:(state, action) =>{
         const id = action.payload;
         state.addCard = state.addCard.filter((product) => product.id !== id);
-    }
+    },
+    deleteAllCartProducts:(state) =>{
+        state.addCard = []
+    },
   }
   
     },
@@ -49,4 +52,11 @@ export const addCard = createSlice ({
 export default addCard.reducer;
 
 
-export const {setAddCard,addItem,substractAnElement,deleteItem,setItem } = addCard.actions;
+export const {
+  setAddCard,
+  addItem,
+  substractAnElement,
+  deleteItem,
+  setItem,
+  deleteAllCartProducts,
+} = addCard.actions;

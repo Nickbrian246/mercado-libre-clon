@@ -7,6 +7,7 @@ import { Link} from 'react-router-dom'
 /* ******************************************************************** */
 import { setAddCard } from "../../../Store/addCard";
 import { useSelector, useDispatch } from "react-redux";
+import { setHowManyProducts } from "../../../Store/howManyProducts";
 
 
 const BuyNAddButtons = (props) => {
@@ -30,6 +31,7 @@ const BuyNAddButtons = (props) => {
       id,
       products,
     })))
+    disptach(setHowManyProducts(1))
   }
 
   return (

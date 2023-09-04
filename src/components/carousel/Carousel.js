@@ -22,7 +22,6 @@ const CostumeCarousel = (props) => {
   const startIndex = currentPage * ITEMS_PER_PAGE;
   const visibleData = productsGroup.slice(startIndex, startIndex + ITEMS_PER_PAGE);
   let hideNextBtn = isfor3slices ? currentPage >= Math.ceil(productsGroup.length / ITEMS_PER_PAGE) -5 : currentPage >= Math.ceil(productsGroup.length / ITEMS_PER_PAGE) - 1
-  console.log((productsGroup && productsGroup?.length>1));
   const translateValue = isfor3slices ? `translateX(-${currentPage * (100 / 8)}%)` :`translateX(-${currentPage * (100 / ITEMS_PER_PAGE)}%)`
   return (
     <div className={ isfor3slices ? carouselStyles.carousel3Slices :carouselStyles.carousel}>

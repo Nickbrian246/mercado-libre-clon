@@ -1,29 +1,29 @@
 import { useSelector } from 'react-redux'
 import productInformationStyles from './productInformation.module.css'
-import { useEffect } from 'react'
-import { useState } from 'react';
+
 
 const ProductInformation = (props) => {
-    const {groupOfCartProducts} = useSelector((state) => state.productsFromCart.groupOfProducts);
-    const [purchasedProducts, setPurchasedProducts] = useState([]);
     const {
         title,
         image,
         id,
         isFromShoppingCart
     } = props
-    useEffect(()=> {
-        if(isFromShoppingCart){
-            setPurchasedProducts(groupOfCartProducts)
-        }
-    },[])
+    const {groupOfCartProducts} = useSelector((state) => state.productsFromCart.groupOfProducts);
+    // const [groupOfCartProducts, setPurchasedProducts] = useState([]);
+    // useEffect(()=> {
+    //     // if(isFromShoppingCart){
+    //     //     console.log(`entrando`);
+    //     //     setPurchasedProducts(groupOfCartProducts)
+    //     // }
+    // },[isFromShoppingCart])
     return (
         <>
         <div className={isFromShoppingCart ? productInformationStyles.containerShoppingCart :productInformationStyles.container}>
             {isFromShoppingCart 
-            ? (purchasedProducts.length >1 
+            ? (groupOfCartProducts.length >1 
                 ?  <div className={productInformationStyles.containerShoppingCart}>
-                    {purchasedProducts.map((product) => (
+                    {groupOfCartProducts.map((product) => (
                         <div className={productInformationStyles.productDetailsContainer}>
                             <div className={productInformationStyles.imgContainerShippingCart}>
                                 <img
@@ -44,11 +44,11 @@ const ProductInformation = (props) => {
                         <div className={productInformationStyles.productImgContainer}>
                         <img
                             alt={`product ${title}`}
-                            src ={purchasedProducts[0].image}
+                            src ={groupOfCartProducts[0].image}
                             className={productInformationStyles.productImg}
                         />
                         </div>
-                        <p className={productInformationStyles.productTitle}>{purchasedProducts[0].title}</p>
+                        <p className={productInformationStyles.productTitle}>{groupOfCartProducts[0].title}</p>
                         <p className={productInformationStyles.succesConfirmationSpan}>tu pedido se proceso con exito !!! </p>
                         </div>
                     )

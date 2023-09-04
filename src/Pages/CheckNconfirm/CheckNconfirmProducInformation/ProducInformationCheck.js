@@ -55,7 +55,7 @@ const ProductInformationCheckNConfirm = (props) => {
       }
       <div className="productPrice-container">
           <div>
-            <p className="productName" >Precio</p>
+            <p className="productName" >{isProductsFromCart ? `Total`: `Precio`}</p>
             {status === true &&( <p className="productName">envio</p>)}
             {isProductsFromCart && (<p className="productName">{`cantidad (${howManyProductsInCart})`}</p>)}
           </div>

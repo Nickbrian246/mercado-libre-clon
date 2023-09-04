@@ -4,11 +4,15 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createListOfNameswithComas } from '../../../utils/text';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { deleteAllCartProducts } from '../../../Store/addCard';
+
 const ProductShippingInfo = (props) => {
     const [listOfNamesWithComas,setListOfNamesWithComas] = useState([])
     const {accountNumber, description} = useSelector((state) => state.cardSelected.cardSelected)
     const {products} = useSelector((state) => state.howManyProducts);
     const {groupOfCartProducts, total} = useSelector((state) => state.productsFromCart.groupOfProducts);
+    const dispatch = useDispatch()
     const {
         title,
         price,
@@ -21,8 +25,11 @@ useEffect(()=>{
         let listOfNames = createListOfNameswithComas(groupOfCartProducts);
         setListOfNamesWithComas(listOfNames)
     }
-},[])
 
+},[isFromShoppingCart,groupOfCartProducts])
+    const handleDeleteCartProducst = ()=>{
+        dispatch(deleteAllCartProducts())
+    }
     let currentDate = getCurrentDateInDDMMYYYY()
     let deliveryDate = getNextFourDays(currentDate)[3]
     return(
@@ -73,8 +80,9 @@ useEffect(()=>{
             </div>
             }
 
-            <div className={styles.navkeepBying}>
-                    <Link to="/"  replace= {true}>Seguir comprando</Link>
+            <div className={styles.navkeepBying} >
+                    <Link to="/"  
+                    onClick={()=>{handleDeleteCartProducst()}} replace= {true}>Seguir comprando</Link>
             </div>
         </section>
 

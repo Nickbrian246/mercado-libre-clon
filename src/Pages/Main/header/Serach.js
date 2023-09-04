@@ -37,7 +37,7 @@ const Search = () => {
  
   };
   const handleProductSelected = (id) => {
-    navigate(`/payPage/${id}`)
+    navigate(`/producto/${id}`)
     handleOnBlur()
   }
 
