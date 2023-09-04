@@ -8,19 +8,16 @@ const AutoCompleteList = (props) => {
         listOfProducstCoincidencies,
         noCoincidences,
         setNoCoincidences,
+        handleProductSelected,
     } = props
-
-    const handleClick = (id) => {
-        console.log(id);
-    }
     
     return (
     <>
-        <div className = { autoCompleteListStyles.container}>
+        <div  className = { autoCompleteListStyles.container}>
             {listOfProducstCoincidencies.map((coincidences) => (
                 <>
                     <div
-                    onClick={(()=>{handleClick(coincidences.id)})} 
+                    onClick={(()=>{handleProductSelected(coincidences.id)})} 
                     className={autoCompleteListStyles.productItemContainer}
                         > 
                         <span className={autoCompleteListStyles.productItemIcon}

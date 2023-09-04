@@ -18,7 +18,6 @@ const ShowProductCart = (props) => {
     const groupOfCartProducts = useSelector((state) =>state.addCard.addCard);
 
     const onChange = (e) => {
-        console.log('radio checked', e.target.value);
         setValue(e.target.value);
     };
     useEffect(()=>{

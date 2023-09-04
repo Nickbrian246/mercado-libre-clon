@@ -20,7 +20,6 @@ useEffect(()=>{
     if(isFromShoppingCart){
         let listOfNames = createListOfNameswithComas(groupOfCartProducts);
         setListOfNamesWithComas(listOfNames)
-        console.log(listOfNames);
     }
 },[])
 

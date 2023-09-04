@@ -27,7 +27,7 @@ const priceMonthlyCalculus = (price / 3);
 const priceMonthly= priceMonthlyCalculus.toFixed(2);// trunca a 2 decimales
 
 const handleRate = (value) => {
-console.log(value, 'soy valor de ratio, en folder de prodcutInformation, descripcionNcost');
+
 }
 
   return (

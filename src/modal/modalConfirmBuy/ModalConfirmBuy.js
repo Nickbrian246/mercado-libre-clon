@@ -49,7 +49,6 @@ const ModalConfirmBuy = (props) => {
       navigate(`/productDetails/${id}`)
     },1000)
   }
-  console.log(isProductsFromCart,`way down`);
   return (
     <>
       <section className={modalStyles.ModalContainer}>
