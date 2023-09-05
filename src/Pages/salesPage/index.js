@@ -65,12 +65,13 @@ useEffect(()=>{
       <Row gutter={[10,10]} style={{
         width:'1218px',
         background:'white',
-        height:'3900px',
+        height:'auto',
+        paddingBottom:"50px",
         boxShadow:' 0 1px 2px 0 rgba(0,0,0,.25)',
         borderRadius:"4px",
         }}>
 
-          <Col  span={16} >
+          <Col  span={16}>
           <Row style={{marginTop:'30px', }}  justify="center">
             <Col  >
             <ProductViewer
