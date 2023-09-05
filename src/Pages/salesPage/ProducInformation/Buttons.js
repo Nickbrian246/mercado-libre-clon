@@ -11,7 +11,7 @@ import { setHowManyProducts } from "../../../Store/howManyProducts";
 
 
 const BuyNAddButtons = (props) => {
-  const {id} = props
+  const {id,setIsResetToDefaultValue} = props
   const {products} = useSelector((state) => state.howManyProducts)
   const disptach= useDispatch()
   // const {
@@ -32,6 +32,7 @@ const BuyNAddButtons = (props) => {
       products,
     })))
     disptach(setHowManyProducts(1))
+    setIsResetToDefaultValue((prevState)=> !prevState)
   }
 
   return (

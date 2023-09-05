@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {IoIosArrowUp} from 'react-icons/io';
 import { SelectQuantityCard } from "./selectQuantityCard/SelectQuantityCard";
 import { quantityList } from "./selectQuantityCard/quantituyList";
 import stockStyles from './stock.module.css'
-const Stock = () => {
+const Stock = (props) => {
+  const {isResetToDefaultValue,setIsResetToDefaultValue} = props
   const {productId} = useParams()
   const [isOpenModalToSelectQuantity, setIsOpenModalToSelectQuantity] = useState(false);
   const [quantitySelected, setQuantitySelected] = useState(false)
@@ -18,7 +19,14 @@ const Stock = () => {
   const  handleOnBlur =() =>{
     setIsOpenModalToSelectQuantity(false)
   }
-
+  useEffect(()=>{
+    console.log(isResetToDefaultValue, quantity,`soy quanityt`);
+    if(isResetToDefaultValue){
+      setPosition(`sadfdafadsfd`);
+      setQuantity(`1 unidad`)
+      setIsResetToDefaultValue((prevState) =>!prevState)
+    }
+  },[isResetToDefaultValue,quantity,setIsResetToDefaultValue])
   return (
     <>
     <div className="stock-container">
