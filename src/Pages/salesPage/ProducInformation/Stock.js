@@ -20,7 +20,6 @@ const Stock = (props) => {
     setIsOpenModalToSelectQuantity(false)
   }
   useEffect(()=>{
-    console.log(isResetToDefaultValue, quantity,`soy quanityt`);
     if(isResetToDefaultValue){
       setPosition(`sadfdafadsfd`);
       setQuantity(`1 unidad`)
